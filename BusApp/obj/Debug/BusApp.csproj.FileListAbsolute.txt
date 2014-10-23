@@ -1,0 +1,12 @@
+C:\Users\garance\Documents\COURSESFALL2014\cpsc481\PROJECT\BusApp\obj\Debug\MainWindow.baml
+C:\Users\garance\Documents\COURSESFALL2014\cpsc481\PROJECT\BusApp\obj\Debug\MainWindow.g.cs
+C:\Users\garance\Documents\COURSESFALL2014\cpsc481\PROJECT\BusApp\obj\Debug\App.g.cs
+C:\Users\garance\Documents\COURSESFALL2014\cpsc481\PROJECT\BusApp\obj\Debug\BusApp_MarkupCompile.cache
+C:\Users\garance\Documents\COURSESFALL2014\cpsc481\PROJECT\BusApp\obj\Debug\BusApp.g.resources
+C:\Users\garance\Documents\COURSESFALL2014\cpsc481\PROJECT\BusApp\obj\Debug\BusApp.Properties.Resources.resources
+C:\Users\garance\Documents\COURSESFALL2014\cpsc481\PROJECT\BusApp\obj\Debug\BusApp.csproj.GenerateResource.Cache
+C:\Users\garance\Documents\COURSESFALL2014\cpsc481\PROJECT\BusApp\bin\Debug\BusApp.exe.config
+C:\Users\garance\Documents\COURSESFALL2014\cpsc481\PROJECT\BusApp\bin\Debug\BusApp.exe
+C:\Users\garance\Documents\COURSESFALL2014\cpsc481\PROJECT\BusApp\bin\Debug\BusApp.pdb
+C:\Users\garance\Documents\COURSESFALL2014\cpsc481\PROJECT\BusApp\obj\Debug\BusApp.exe
+C:\Users\garance\Documents\COURSESFALL2014\cpsc481\PROJECT\BusApp\obj\Debug\BusApp.pdb
