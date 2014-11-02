@@ -13,9 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-
-
 namespace BusApp
 {
     /// <summary>
@@ -23,8 +20,9 @@ namespace BusApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        int count_click = 0;
-        double x_mouse, y_mouse;
+        private int count_click = 0;
+        private double x_mouse, y_mouse, x_depart, y_depart, x_arrive, y_arrive;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -33,22 +31,21 @@ namespace BusApp
 
         private void City_button_clicked(Object sender, RoutedEventArgs e)
         {
-            System.Windows.Controls.Button clickedButton = (System.Windows.Controls.Button)sender;
             count_click++;
-            double xdep=0, ydep=0, xarr, yarr;
             if (count_click==1) 
             {
-                xdep = x_mouse;
-                ydep = y_mouse;
+                x_depart = x_mouse;
+                y_depart = y_mouse;
+            }
+            else if (count_click == 2) 
+            {
+                count_click = 0;
+                x_arrive = x_mouse;
+                y_arrive = y_mouse;
+                DrawWay(x_depart, y_depart, x_arrive, y_arrive);
             }
 
-            if (count_click == 2) 
-            {
-                count_click=0;
-                xarr = x_mouse;
-                yarr = y_mouse;
-                DrawWay(xdep, ydep, xarr, yarr);
-            }
+            System.Windows.Controls.Button clickedButton = (System.Windows.Controls.Button)sender;
             Console.WriteLine("\nBUTTON CLICKED " + clickedButton.Name + "\n\n");
             Console.WriteLine("COUNT_CLICK " + count_click + "\n\n");
          }
@@ -70,7 +67,6 @@ namespace BusApp
             myLine.StrokeThickness = 5;
             myGrid.Children.Add(myLine);
         }
-
 
         public Line myLine { get; set; }
     }
