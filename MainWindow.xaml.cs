@@ -31,11 +31,19 @@ namespace BusApp
 
         private void City_button_clicked(Object sender, RoutedEventArgs e)
         {
+            System.Windows.Controls.Button clickedButton = (System.Windows.Controls.Button)sender;
+
             count_click++;
             if (count_click==1) 
             {
+                if (myLine != null && myLine.IsVisible)
+                {
+                    myLine.Visibility = System.Windows.Visibility.Collapsed;
+                }
+
                 x_depart = x_mouse;
                 y_depart = y_mouse;
+                LeavingCityTextBox.Text = clickedButton.Name;
             }
             else if (count_click == 2) 
             {
@@ -43,11 +51,8 @@ namespace BusApp
                 x_arrive = x_mouse;
                 y_arrive = y_mouse;
                 DrawWay(x_depart, y_depart, x_arrive, y_arrive);
+                ArrivingCityTextBox.Text = clickedButton.Name;
             }
-
-            System.Windows.Controls.Button clickedButton = (System.Windows.Controls.Button)sender;
-            Console.WriteLine("\nBUTTON CLICKED " + clickedButton.Name + "\n\n");
-            Console.WriteLine("COUNT_CLICK " + count_click + "\n\n");
          }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)

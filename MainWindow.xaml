@@ -65,7 +65,7 @@
             </Button.Template>
         </Button>
 
-        <Button Name="Winnipeg" Background="Red" Margin="211,296,552.6,294" Panel.ZIndex="9" RenderTransformOrigin="0.907,1.044" Click="City_button_clicked">
+        <Button Name="Yellowknife" Background="Red" Margin="211,296,552.6,294" Panel.ZIndex="9" RenderTransformOrigin="0.907,1.044" Click="City_button_clicked">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Grid>
@@ -94,7 +94,7 @@
             </Button.Template>
         </Button>
 
-        <Button Name="Yellowknife" Background="Red" Margin="318,467,445.6,123" Panel.ZIndex="9" RenderTransformOrigin="0.907,1.044" Click="City_button_clicked">
+        <Button Name="Winnipeg" Background="Red" Margin="318,467,445.6,123" Panel.ZIndex="9" RenderTransformOrigin="0.907,1.044" Click="City_button_clicked">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Grid>
@@ -406,5 +406,19 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        <Grid HorizontalAlignment="Left" Height="92" Margin="458,25,0,0" VerticalAlignment="Top" Width="309" Background="WhiteSmoke">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="31*"/>
+                <ColumnDefinition Width="72*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Leaving From" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="30" Width="87" Grid.ColumnSpan="2"/>
+            <Label Content="Going To" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="30" Width="87" Grid.ColumnSpan="2"/>
+            <TextBox Name="LeavingCityTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
+            <TextBox Name="ArrivingCityTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
+        </Grid>
     </Grid>
 </Window>
