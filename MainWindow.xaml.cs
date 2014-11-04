@@ -128,5 +128,16 @@ namespace BusApp
         }
 
         public Line myLine { get; set; }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            ClearLine();
+            DepartingCityTextBox.Text = "";
+            ArrivingCityTextBox.Text = "";
+        }
     }
 }
