@@ -34,23 +34,19 @@ namespace BusApp
             System.Windows.Controls.Button clickedButton = (System.Windows.Controls.Button)sender;
 
             count_click++;
-            if (count_click==1) 
+            if (count_click == 1)
             {
-                if (myLine != null && myLine.IsVisible)
-                {
-                    myLine.Visibility = System.Windows.Visibility.Collapsed;
-                }
-
+                ClearLine();
                 x_depart = x_mouse;
                 y_depart = y_mouse;
-                LeavingCityTextBox.Text = clickedButton.Name;
+                DepartingCityTextBox.Text = clickedButton.Name;
+                ArrivingCityTextBox.Text = "";
             }
             else if (count_click == 2) 
             {
-                count_click = 0;
                 x_arrive = x_mouse;
                 y_arrive = y_mouse;
-                DrawWay(x_depart, y_depart, x_arrive, y_arrive);
+                DrawWay();
                 ArrivingCityTextBox.Text = clickedButton.Name;
             }
          }
@@ -61,16 +57,74 @@ namespace BusApp
             y_mouse = e.GetPosition(myGrid).Y;      
         }
 
-        private void DrawWay(double xdep, double ydep, double xarr, double yarr) 
+        private void DepartingCityTextBox_Update(object sender, RoutedEventArgs e)
         {
+            String cityName = DepartingCityTextBox.Text;
+            object buttonObj = myGrid.FindName(cityName);
+            if (buttonObj != null)
+            {
+                Button button = (Button)buttonObj;
+                Point point = button.TransformToAncestor(this).Transform(new Point(0, 0));
+                x_depart = point.X + 10;
+                y_depart = point.Y + 10;
+                count_click = 1;
+                if (ArrivingCityTextBox.Text != "")
+                {
+                    DrawWay();
+                }
+            }
+        }
+
+        private void ArrivingCityTextBox_Update(object sender, RoutedEventArgs e)
+        {
+            String cityName = ArrivingCityTextBox.Text;
+            object buttonObj = myGrid.FindName(cityName);
+            if (buttonObj != null)
+            {
+                Button button = (Button)buttonObj;
+                Point point = button.TransformToAncestor(this).Transform(new Point(0, 0));
+                x_arrive = point.X + 10;
+                y_arrive = point.Y + 10;
+                DrawWay();
+            }
+        }
+
+        private void DepartingCityTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                DepartingCityTextBox_Update(DepartingCityTextBox, e);
+            }
+        }
+
+        private void ArrivingCityTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                ArrivingCityTextBox_Update(ArrivingCityTextBox, e);
+            }
+        }
+
+        private void DrawWay() 
+        {
+            ClearLine();
             myLine = new Line();
             myLine.Stroke = System.Windows.Media.Brushes.LightBlue;
-            myLine.X1 = xdep;
-            myLine.X2 = xarr;
-            myLine.Y1 = ydep;
-            myLine.Y2 = yarr;
+            myLine.X1 = x_depart;
+            myLine.X2 = x_arrive;
+            myLine.Y1 = y_depart;
+            myLine.Y2 = y_arrive;
             myLine.StrokeThickness = 5;
             myGrid.Children.Add(myLine);
+            count_click = 0;
+        }
+
+        public void ClearLine()
+        {
+            if (myLine != null && myLine.IsVisible)
+            {
+                myLine.Visibility = System.Windows.Visibility.Collapsed;
+            }
         }
 
         public Line myLine { get; set; }
