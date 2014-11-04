@@ -4,7 +4,7 @@
         Title="BusApp" Height="650" Width="800">
     <Grid Name="myGrid">
         <Grid.Background>
-            <ImageBrush ImageSource="mapcanada.png"/>
+            <ImageBrush ImageSource="Images/mapcanada.png"/>
         </Grid.Background>
 
         <Button Name="Edmonton" Background="Red" Margin="182,388,581.6,202" Panel.ZIndex="9" RenderTransformOrigin="0.907,1.044" Click="City_button_clicked">
