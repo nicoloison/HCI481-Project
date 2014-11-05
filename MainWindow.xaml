@@ -6,7 +6,7 @@
 	<Window.Resources>
 		<Storyboard x:Key="HomeAnimation">
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock">
-				<EasingDoubleKeyFrame KeyTime="0" Value="165"/>
+				<EasingDoubleKeyFrame KeyTime="0" Value="339"/>
 				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Logo6">
@@ -61,9 +61,18 @@
 				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
 				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.5"/>
 			</DoubleAnimationUsingKeyFrames>
-			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="homeGrid">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="HomeGrid">
+				<EasingColorKeyFrame KeyTime="0" Value="Black"/>
 				<EasingColorKeyFrame KeyTime="0:0:1" Value="White"/>
 			</ColorAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="BuyTicketsLabel">
+				<EasingDoubleKeyFrame KeyTime="0" Value="360"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="TouchLabel">
+				<EasingDoubleKeyFrame KeyTime="0" Value="360"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
 	</Window.Resources>
 	<Window.Triggers>
@@ -494,7 +503,7 @@
 			<Label Content="Step 1: Specify trip" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
 			<Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
 		</Grid>
-		<Grid x:Name="homeGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" Background="Black">
+		<Grid x:Name="HomeGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" Background="White">
 			<Path x:Name="Logo6" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FF78DC00" HorizontalAlignment="Left" Height="189" Margin="566,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
 				<Path.RenderTransform>
 					<TransformGroup>
@@ -556,6 +565,26 @@
 				</Path.RenderTransform>
 			</Path>
 			<TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="BUSAPP" VerticalAlignment="Top" Margin="105.5,192.4,0,0" FontSize="153.333" Foreground="White" FontFamily="Adobe Heiti Std R" RenderTransformOrigin="0.5,0.5">
+				<TextBlock.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</TextBlock.RenderTransform>
+			</TextBlock>
+			<TextBlock x:Name="BuyTicketsLabel" HorizontalAlignment="Left" Height="75.067" Margin="218,424,0,0" TextWrapping="Wrap" Text="Buy tickets here!" VerticalAlignment="Top" Width="350" FontSize="45" RenderTransformOrigin="0.5,0.5">
+				<TextBlock.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</TextBlock.RenderTransform>
+			</TextBlock>
+			<TextBlock x:Name="TouchLabel" HorizontalAlignment="Left" Height="43.567" Margin="243.5,499.067,0,0" TextWrapping="Wrap" Text="Touch anywhere to start." VerticalAlignment="Top" Width="300" FontSize="26.667" Foreground="#FF5B5B5B" RenderTransformOrigin="0.5,0.5">
 				<TextBlock.RenderTransform>
 					<TransformGroup>
 						<ScaleTransform/>

@@ -27,6 +27,15 @@ namespace BusApp
         {
             InitializeComponent();
             this.MouseMove += new MouseEventHandler(pictureBox1_MouseUp);
+            this.MouseLeftButtonDown += MainWindow_MouseLeftButtonDown;
+
+            mapGrid.Visibility = Visibility.Collapsed;
+        }
+
+        void MainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            HomeGrid.Visibility = Visibility.Collapsed;
+            mapGrid.Visibility = Visibility.Visible;
         }
 
         private void City_button_clicked(Object sender, RoutedEventArgs e)
@@ -123,7 +132,7 @@ namespace BusApp
         {
             if (myLine != null && myLine.IsVisible)
             {
-                myLine.Visibility = System.Windows.Visibility.Collapsed;
+                myLine.Visibility = Visibility.Collapsed;
             }
         }
 
