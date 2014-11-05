@@ -3,6 +3,74 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="BusApp.MainWindow"
         Title="BusApp" Height="650" Width="800">
+	<Window.Resources>
+		<Storyboard x:Key="HomeAnimation">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock">
+				<EasingDoubleKeyFrame KeyTime="0" Value="165"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Logo6">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-390"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Logo5">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-390"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Logo4">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-390"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Logo3">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-390"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Logo2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-390"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Logo1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-390"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Logo6">
+				<EasingColorKeyFrame KeyTime="0" Value="#0078DC00"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FF78DC00"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Logo5">
+				<EasingColorKeyFrame KeyTime="0" Value="#00D2DC00"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFD2DC00"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Logo4">
+				<EasingColorKeyFrame KeyTime="0" Value="#00DCAA00"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFDCAA00"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Logo3">
+				<EasingColorKeyFrame KeyTime="0" Value="#00DC7800"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFDC7800"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Logo2">
+				<EasingColorKeyFrame KeyTime="0" Value="#00DC5000"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFDC5000"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Logo1">
+				<EasingColorKeyFrame KeyTime="0" Value="#00DC0000"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFDC0000"/>
+			</ColorAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="textBlock">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="homeGrid">
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="White"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+	</Window.Resources>
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{StaticResource HomeAnimation}"/>
+		</EventTrigger>
+	</Window.Triggers>
 	<Grid x:Name="MainGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792">
 		<Grid x:Name="mapGrid" d:IsHidden="True">
 			<Grid.Background>
@@ -426,14 +494,77 @@
 			<Label Content="Step 1: Specify trip" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
 			<Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
 		</Grid>
-		<Grid x:Name="homeGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792">
-			<Path Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDC7800" HorizontalAlignment="Left" Height="189" Margin="273.5,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164"/>
-			<Path Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDC5000" HorizontalAlignment="Left" Height="189" Margin="176,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164"/>
-			<Path Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDC0000" HorizontalAlignment="Left" Height="189" Margin="77,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164"/>
-			<Path Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFD2DC00" HorizontalAlignment="Left" Height="189" Margin="468.5,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164"/>
-			<Path Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDCAA00" HorizontalAlignment="Left" Height="189" Margin="371,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164"/>
-			<Path Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FF78DC00" HorizontalAlignment="Left" Height="189" Margin="566,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164"/>
-			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="BUSAPP" VerticalAlignment="Top" Margin="105.5,187.9,0,0" FontSize="153.333" Foreground="White" FontFamily="Adobe Heiti Std R"/>
+		<Grid x:Name="homeGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" Background="Black">
+			<Path x:Name="Logo6" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FF78DC00" HorizontalAlignment="Left" Height="189" Margin="566,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+			<Path x:Name="Logo5" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFD2DC00" HorizontalAlignment="Left" Height="189" Margin="468.5,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+			<Path x:Name="Logo4" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDCAA00" HorizontalAlignment="Left" Height="189" Margin="371,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+			<Path x:Name="Logo3" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDC7800" HorizontalAlignment="Left" Height="189" Margin="273.5,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+			<Path x:Name="Logo2" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDC5000" HorizontalAlignment="Left" Height="189" Margin="176,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+			<Path x:Name="Logo1" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDC0000" HorizontalAlignment="Left" Height="189" Margin="77,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+			<TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="BUSAPP" VerticalAlignment="Top" Margin="105.5,192.4,0,0" FontSize="153.333" Foreground="White" FontFamily="Adobe Heiti Std R" RenderTransformOrigin="0.5,0.5">
+				<TextBlock.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</TextBlock.RenderTransform>
+			</TextBlock>
 		</Grid>
 	</Grid>
 </Window>

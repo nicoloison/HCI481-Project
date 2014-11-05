@@ -53,14 +53,14 @@ namespace BusApp
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            x_mouse = e.GetPosition(myGrid).X;
-            y_mouse = e.GetPosition(myGrid).Y;      
+            x_mouse = e.GetPosition(mapGrid).X;
+            y_mouse = e.GetPosition(mapGrid).Y;      
         }
 
         private void DepartingCityTextBox_Update(object sender, RoutedEventArgs e)
         {
             String cityName = DepartingCityTextBox.Text;
-            object buttonObj = myGrid.FindName(cityName);
+            object buttonObj = mapGrid.FindName(cityName);
             if (buttonObj != null)
             {
                 Button button = (Button)buttonObj;
@@ -78,7 +78,7 @@ namespace BusApp
         private void ArrivingCityTextBox_Update(object sender, RoutedEventArgs e)
         {
             String cityName = ArrivingCityTextBox.Text;
-            object buttonObj = myGrid.FindName(cityName);
+            object buttonObj = mapGrid.FindName(cityName);
             if (buttonObj != null)
             {
                 Button button = (Button)buttonObj;
@@ -115,7 +115,7 @@ namespace BusApp
             myLine.Y1 = y_depart;
             myLine.Y2 = y_arrive;
             myLine.StrokeThickness = 5;
-            myGrid.Children.Add(myLine);
+            mapGrid.Children.Add(myLine);
             count_click = 0;
         }
 
