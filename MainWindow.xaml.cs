@@ -30,12 +30,17 @@ namespace BusApp
             this.MouseLeftButtonDown += MainWindow_MouseLeftButtonDown;
 
             mapGrid.Visibility = Visibility.Collapsed;
+            ScheduleGrid.Visibility = Visibility.Collapsed;
         }
 
         void MainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            HomeGrid.Visibility = Visibility.Collapsed;
-            mapGrid.Visibility = Visibility.Visible;
+            if (HomeGrid.IsVisible)
+            {
+                HomeGrid.Visibility = Visibility.Collapsed;
+                mapGrid.Visibility = Visibility.Visible;
+                ScheduleGrid.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void City_button_clicked(Object sender, RoutedEventArgs e)
@@ -140,13 +145,45 @@ namespace BusApp
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-
+            ShowScheduleGrid();
         }
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             ClearLine();
             DepartingCityTextBox.Text = "";
             ArrivingCityTextBox.Text = "";
+
+            ShowHomeGrid();
+        }
+        private void ScheduleNext_Click(object sender, RoutedEventArgs e)
+        {
+        }
+        private void SchedulePrev_Click(object sender, RoutedEventArgs e)
+        {
+            ShowMapGrid();
+        }
+
+        private void ShowHomeGrid()
+        {
+            HomeGrid.Visibility = Visibility.Visible;
+            mapGrid.Visibility = Visibility.Collapsed;
+            ScheduleGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void ShowMapGrid()
+        {
+            HomeGrid.Visibility = Visibility.Collapsed;
+            mapGrid.Visibility = Visibility.Visible;
+            ScheduleGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void ShowScheduleGrid()
+        {
+            HomeGrid.Visibility = Visibility.Collapsed;
+            mapGrid.Visibility = Visibility.Collapsed;
+            ScheduleGrid.Visibility = Visibility.Visible;
+
+            Step2Desc.Text = "Showing trips from " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + ":";
         }
     }
 }

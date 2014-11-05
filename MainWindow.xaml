@@ -7,72 +7,91 @@
 		<Storyboard x:Key="HomeAnimation">
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock">
 				<EasingDoubleKeyFrame KeyTime="0" Value="339"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="127.125"/>
 				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Logo6">
 				<EasingDoubleKeyFrame KeyTime="0" Value="-390"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Logo5">
 				<EasingDoubleKeyFrame KeyTime="0" Value="-390"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Logo4">
 				<EasingDoubleKeyFrame KeyTime="0" Value="-390"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Logo3">
 				<EasingDoubleKeyFrame KeyTime="0" Value="-390"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Logo2">
 				<EasingDoubleKeyFrame KeyTime="0" Value="-390"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Logo1">
 				<EasingDoubleKeyFrame KeyTime="0" Value="-390"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
 			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Logo6">
 				<EasingColorKeyFrame KeyTime="0" Value="#0078DC00"/>
-				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FF78DC00"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FF78DC00"/>
 			</ColorAnimationUsingKeyFrames>
 			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Logo5">
 				<EasingColorKeyFrame KeyTime="0" Value="#00D2DC00"/>
-				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFD2DC00"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FFD2DC00"/>
 			</ColorAnimationUsingKeyFrames>
 			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Logo4">
 				<EasingColorKeyFrame KeyTime="0" Value="#00DCAA00"/>
-				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFDCAA00"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FFDCAA00"/>
 			</ColorAnimationUsingKeyFrames>
 			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Logo3">
 				<EasingColorKeyFrame KeyTime="0" Value="#00DC7800"/>
-				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFDC7800"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FFDC7800"/>
 			</ColorAnimationUsingKeyFrames>
 			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Logo2">
 				<EasingColorKeyFrame KeyTime="0" Value="#00DC5000"/>
-				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFDC5000"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FFDC5000"/>
 			</ColorAnimationUsingKeyFrames>
 			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Logo1">
 				<EasingColorKeyFrame KeyTime="0" Value="#00DC0000"/>
-				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFDC0000"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FFDC0000"/>
 			</ColorAnimationUsingKeyFrames>
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="textBlock">
 				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.9375"/>
 				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.5"/>
 			</DoubleAnimationUsingKeyFrames>
 			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="HomeGrid">
 				<EasingColorKeyFrame KeyTime="0" Value="Black"/>
-				<EasingColorKeyFrame KeyTime="0:0:1" Value="White"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.5" Value="White"/>
 			</ColorAnimationUsingKeyFrames>
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="BuyTicketsLabel">
-				<EasingDoubleKeyFrame KeyTime="0" Value="360"/>
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
 				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="TouchLabel">
-				<EasingDoubleKeyFrame KeyTime="0" Value="360"/>
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
 				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="textBlock">
+				<EasingColorKeyFrame KeyTime="0" Value="Black"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.5" Value="White"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="White"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="TouchLabel">
+				<EasingColorKeyFrame KeyTime="0" Value="#005B5B5B"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="sc#0, 0.104616486, 0.104616486, 0.104616486"/>
+				<EasingColorKeyFrame KeyTime="0:0:1.2" Value="#FF5B5B5B"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="BuyTicketsLabel">
+				<EasingColorKeyFrame KeyTime="0" Value="#00000000"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="sc#0, 0, 0, 0"/>
+				<EasingColorKeyFrame KeyTime="0:0:1.2" Value="Black"/>
+			</ColorAnimationUsingKeyFrames>
 		</Storyboard>
 	</Window.Resources>
 	<Window.Triggers>
@@ -594,6 +613,13 @@
 					</TransformGroup>
 				</TextBlock.RenderTransform>
 			</TextBlock>
+		</Grid>
+		<Grid x:Name="ScheduleGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" d:IsHidden="True">
+			<Label x:Name="Step2Label" Content="Step 2: Select bus" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
+			<TextBlock x:Name="Step2Desc" HorizontalAlignment="Left" Height="39" Margin="29,71.923,0,0" TextWrapping="Wrap" Text="Showing trips:" VerticalAlignment="Top" Width="733.5" FontSize="24"/>
+            <Button x:Name="ScheduleNext" Content="Next" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="ScheduleNext_Click"/>
+			<Button x:Name="ScheduleCancel" Content="Cancel" HorizontalAlignment="Center" Margin="0,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
+            <Button x:Name="SchedulePrev" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="SchedulePrev_Click"/>
 		</Grid>
 	</Grid>
 </Window>
