@@ -168,6 +168,21 @@ namespace BusApp
         {
             ShowMapGrid();
         }
+        private void NextTime_Click(object sender, RoutedEventArgs e) 
+        {
+            Oct12th.Visibility = Visibility.Visible;
+            Oct26th.Visibility = Visibility.Visible;
+            Oct17th.Visibility = Visibility.Collapsed;
+            Oct3rd.Visibility = Visibility.Collapsed;
+            Step2Desc.Visibility = Visibility.Collapsed;
+            Step4Desc.Visibility = Visibility.Visible;
+            Step2Label.Visibility = Visibility.Collapsed;
+            Step4Label.Visibility = Visibility.Visible;
+            ChosenDepDates.Visibility = Visibility.Collapsed;
+            ChosenRetDates.Visibility = Visibility.Visible;
+
+            ShowScheduleGrid();
+        }
 
         #region Grid Handlers
         private void ShowHomeGrid()
@@ -203,7 +218,9 @@ namespace BusApp
             mapGrid.Visibility = Visibility.Collapsed;
             ScheduleGrid.Visibility = Visibility.Collapsed;
             TimeGrid.Visibility = Visibility.Visible;
-
+            Onepm.Visibility = Visibility.Visible;
+            Nineam.Visibility = Visibility.Visible;
+            NextTime.Visibility = Visibility.Visible;
             AvailableTime.Text = "Choose among available departure times for October "+depDate+" from "+DepartingCityTextBox.Text+ " to "+ArrivingCityTextBox.Text+" :";
 
         }
@@ -233,6 +250,24 @@ namespace BusApp
             retDate = Oct26th.Content.ToString();
             ChosenRetDates.Visibility = Visibility.Visible;
             ChosenRetDates.Text = "You choose return on October " + retDate;
+        }
+        #endregion
+
+        #region Time Buttons Handlers
+        private void Onepm_button_clicked(object sender, RoutedEventArgs e) 
+        {
+            depTime = "1:00 pm";
+
+        }
+        private void Nineam_button_clicked(object sender, RoutedEventArgs e)
+        {
+            depTime = "9:00 pm";
+
+        }
+        private void Elevenam_button_clicked(object sender, RoutedEventArgs e)
+        {
+            depTime = "11:00 am";
+
         }
         #endregion
     }
