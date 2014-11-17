@@ -620,13 +620,21 @@
             </Grid.Background>
             <Label x:Name="Step2Label" Content="Step 2: Select bus" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
 			<TextBlock x:Name="Step2Desc" HorizontalAlignment="Left" Height="39" Margin="29,71.923,0,0" TextWrapping="Wrap" Text="Showing trips:" VerticalAlignment="Top" Width="733.5" FontSize="24"/>
+            <Label x:Name="Step4Label" Content="Step 4: Select bus" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" Visibility="Hidden"/>
+            <TextBlock x:Name="Step4Desc" HorizontalAlignment="Left" Height="39" Margin="29,71.923,0,0" TextWrapping="Wrap" Text="Showing trips:" VerticalAlignment="Top" Width="733.5" FontSize="24" Visibility="Hidden"/>
             <TextBlock x:Name="AvailableDates" HorizontalAlignment="Left" Height="39" Margin="20,212,0,0" TextWrapping="Wrap" Text="Choose among available dates:" VerticalAlignment="Top" Width="220" FontSize="15"/>
+            <TextBlock x:Name="ChosenDepDates" HorizontalAlignment="Left" Height="39" Margin="20,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="15" Visibility="Collapsed"/>
+            <TextBlock x:Name="ChosenRetDates" HorizontalAlignment="Left" Height="39" Margin="20,250,0,0" TextWrapping="Wrap" Text="You choose return on October " VerticalAlignment="Top" Width="220" FontSize="15" Visibility="Collapsed"/>
             <Button x:Name="ScheduleNext" Content="Next" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="ScheduleNext_Click"/>
 			<Button x:Name="ScheduleCancel" Content="Cancel" HorizontalAlignment="Center" Margin="0,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
             <Button x:Name="SchedulePrev" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="SchedulePrev_Click"/>
-            <Button Name="Oct3rd" Content="3" Background="Coral" HorizontalAlignment="Left" Margin="462,230,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" />
-            <Button Name="Oct17th" Content="17" Background="Coral" HorizontalAlignment="Left" Margin="462,366,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R"/>
-            <Button Name="Oct31th" Content="31" Background="Coral" HorizontalAlignment="Left" Margin="462,504,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R"/>
+            <Button Name="Oct3rd" Content="3" Background="Coral" HorizontalAlignment="Left" Margin="462,230,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Click="Oct3rdClicked"/>
+            <Button Name="Oct17th" Content="17" Background="Coral" HorizontalAlignment="Left" Margin="462,366,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Click="Oct17thClicked"/>
+            <Button Name="Oct12th" Content="12" Background="Gold" HorizontalAlignment="Left" Margin="608,298,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Visibility="Hidden" Click="Oct12thClicked"/>
+            <Button Name="Oct26th" Content="26" Background="Gold" HorizontalAlignment="Left" Margin="608,437,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Visibility="Hidden" Click="Oct26thClicked"/>
         </Grid>
-	</Grid>
+        <Grid x:Name="TimeGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" d:IsHidden="True">
+            <TextBlock x:Name="AvailableTime" Width="733.5" FontSize="24" TextAlignment="Left" TextWrapping="Wrap" FontWeight="Bold" />
+        </Grid>
+    </Grid>
 </Window>

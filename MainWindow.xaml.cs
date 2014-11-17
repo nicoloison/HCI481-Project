@@ -18,11 +18,12 @@ namespace BusApp
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
     public partial class MainWindow : Window
     {
         private int count_click = 0;
         private double x_mouse, y_mouse, x_depart, y_depart, x_arrive, y_arrive;
-        
+        public static string depDate,depTime,retDate,repTime;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace BusApp
             ScheduleGrid.Visibility = Visibility.Collapsed;
         }
 
+        #region Map Grid Functions
         void MainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (HomeGrid.IsVisible)
@@ -40,6 +42,7 @@ namespace BusApp
                 HomeGrid.Visibility = Visibility.Collapsed;
                 mapGrid.Visibility = Visibility.Visible;
                 ScheduleGrid.Visibility = Visibility.Collapsed;
+                TimeGrid.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -143,6 +146,8 @@ namespace BusApp
 
         public Line myLine { get; set; }
 
+        #endregion
+
         private void Next_Click(object sender, RoutedEventArgs e)
         {
             ShowScheduleGrid();
@@ -157,17 +162,20 @@ namespace BusApp
         }
         private void ScheduleNext_Click(object sender, RoutedEventArgs e)
         {
+            ShowTimesGrid();
         }
         private void SchedulePrev_Click(object sender, RoutedEventArgs e)
         {
             ShowMapGrid();
         }
 
+        #region Grid Handlers
         private void ShowHomeGrid()
         {
             HomeGrid.Visibility = Visibility.Visible;
             mapGrid.Visibility = Visibility.Collapsed;
             ScheduleGrid.Visibility = Visibility.Collapsed;
+            TimeGrid.Visibility = Visibility.Collapsed;
         }
 
         private void ShowMapGrid()
@@ -175,6 +183,7 @@ namespace BusApp
             HomeGrid.Visibility = Visibility.Collapsed;
             mapGrid.Visibility = Visibility.Visible;
             ScheduleGrid.Visibility = Visibility.Collapsed;
+            TimeGrid.Visibility = Visibility.Collapsed;
         }
 
         private void ShowScheduleGrid()
@@ -182,9 +191,49 @@ namespace BusApp
             HomeGrid.Visibility = Visibility.Collapsed;
             mapGrid.Visibility = Visibility.Collapsed;
             ScheduleGrid.Visibility = Visibility.Visible;
+            TimeGrid.Visibility = Visibility.Collapsed;
 
             Step2Desc.Text = "Showing trips from " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + ":";
+            
+        }
+
+        private void ShowTimesGrid()
+        {
+            HomeGrid.Visibility = Visibility.Collapsed;
+            mapGrid.Visibility = Visibility.Collapsed;
+            ScheduleGrid.Visibility = Visibility.Collapsed;
+            TimeGrid.Visibility = Visibility.Visible;
+
+            AvailableTime.Text = "Choose among available departure times for October "+depDate+" from "+DepartingCityTextBox.Text+ " to "+ArrivingCityTextBox.Text+" :";
 
         }
+        #endregion
+
+        #region Dates Buttons Handler
+        private void Oct3rdClicked(object sender, RoutedEventArgs e)
+        {
+            depDate = Oct3rd.Content.ToString();
+            ChosenDepDates.Visibility = Visibility.Visible;
+            ChosenDepDates.Text = "You choose departure on October "+depDate;
+        }
+        private void Oct17thClicked(object sender, RoutedEventArgs e)
+        {
+            depDate = Oct17th.Content.ToString();
+            ChosenDepDates.Visibility = Visibility.Visible;
+            ChosenDepDates.Text = "You choose departure on October " + depDate;
+        }
+        private void Oct12thClicked(object sender, RoutedEventArgs e)
+        {
+            retDate = Oct12th.Content.ToString();
+            ChosenRetDates.Visibility = Visibility.Visible;
+            ChosenRetDates.Text = "You choose return on October " + retDate;
+        }
+        private void Oct26thClicked(object sender, RoutedEventArgs e)
+        {
+            retDate = Oct26th.Content.ToString();
+            ChosenRetDates.Visibility = Visibility.Visible;
+            ChosenRetDates.Text = "You choose return on October " + retDate;
+        }
+        #endregion
     }
 }
