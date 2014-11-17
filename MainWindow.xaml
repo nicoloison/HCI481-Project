@@ -522,104 +522,111 @@
 			<Label Content="Step 1: Specify trip" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
 			<Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
 		</Grid>
-		<Grid x:Name="HomeGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" Background="White">
-			<Path x:Name="Logo6" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FF78DC00" HorizontalAlignment="Left" Height="189" Margin="566,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
-				<Path.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</Path.RenderTransform>
-			</Path>
-			<Path x:Name="Logo5" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFD2DC00" HorizontalAlignment="Left" Height="189" Margin="468.5,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
-				<Path.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</Path.RenderTransform>
-			</Path>
-			<Path x:Name="Logo4" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDCAA00" HorizontalAlignment="Left" Height="189" Margin="371,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
-				<Path.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</Path.RenderTransform>
-			</Path>
-			<Path x:Name="Logo3" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDC7800" HorizontalAlignment="Left" Height="189" Margin="273.5,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
-				<Path.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</Path.RenderTransform>
-			</Path>
-			<Path x:Name="Logo2" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDC5000" HorizontalAlignment="Left" Height="189" Margin="176,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
-				<Path.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</Path.RenderTransform>
-			</Path>
-			<Path x:Name="Logo1" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDC0000" HorizontalAlignment="Left" Height="189" Margin="77,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
-				<Path.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</Path.RenderTransform>
-			</Path>
-			<TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="BUSAPP" VerticalAlignment="Top" Margin="105.5,192.4,0,0" FontSize="153.333" Foreground="White" FontFamily="Adobe Heiti Std R" RenderTransformOrigin="0.5,0.5">
-				<TextBlock.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</TextBlock.RenderTransform>
-			</TextBlock>
-			<TextBlock x:Name="BuyTicketsLabel" HorizontalAlignment="Left" Height="75.067" Margin="218,424,0,0" TextWrapping="Wrap" Text="Buy tickets here!" VerticalAlignment="Top" Width="350" FontSize="45" RenderTransformOrigin="0.5,0.5">
-				<TextBlock.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</TextBlock.RenderTransform>
-			</TextBlock>
-			<TextBlock x:Name="TouchLabel" HorizontalAlignment="Left" Height="43.567" Margin="243.5,499.067,0,0" TextWrapping="Wrap" Text="Touch anywhere to start." VerticalAlignment="Top" Width="300" FontSize="26.667" Foreground="#FF5B5B5B" RenderTransformOrigin="0.5,0.5">
-				<TextBlock.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</TextBlock.RenderTransform>
-			</TextBlock>
-		</Grid>
-		<Grid x:Name="ScheduleGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" d:IsHidden="True">
-			<Label x:Name="Step2Label" Content="Step 2: Select bus" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
+        <Grid x:Name="HomeGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" Background="White">
+            <Path x:Name="Logo6" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FF78DC00" HorizontalAlignment="Left" Height="189" Margin="566,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="Logo5" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFD2DC00" HorizontalAlignment="Left" Height="189" Margin="468.5,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="Logo4" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDCAA00" HorizontalAlignment="Left" Height="189" Margin="371,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="Logo3" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDC7800" HorizontalAlignment="Left" Height="189" Margin="273.5,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="Logo2" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDC5000" HorizontalAlignment="Left" Height="189" Margin="176,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="Logo1" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FFDC0000" HorizontalAlignment="Left" Height="189" Margin="77,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="BUSAPP" VerticalAlignment="Top" Margin="105.5,192.4,0,0" FontSize="153.333" Foreground="White" FontFamily="Adobe Heiti Std R" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="BuyTicketsLabel" HorizontalAlignment="Left" Height="75.067" Margin="218,424,0,0" TextWrapping="Wrap" Text="Buy tickets here!" VerticalAlignment="Top" Width="350" FontSize="45" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="TouchLabel" HorizontalAlignment="Left" Height="43.567" Margin="243.5,499.067,0,0" TextWrapping="Wrap" Text="Touch anywhere to start." VerticalAlignment="Top" Width="300" FontSize="26.667" Foreground="#FF5B5B5B" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+        </Grid>
+        <Grid x:Name="ScheduleGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" d:IsHidden="True">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/octcalendar.png"/>
+            </Grid.Background>
+            <Label x:Name="Step2Label" Content="Step 2: Select bus" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
 			<TextBlock x:Name="Step2Desc" HorizontalAlignment="Left" Height="39" Margin="29,71.923,0,0" TextWrapping="Wrap" Text="Showing trips:" VerticalAlignment="Top" Width="733.5" FontSize="24"/>
+            <TextBlock x:Name="AvailableDates" HorizontalAlignment="Left" Height="39" Margin="20,212,0,0" TextWrapping="Wrap" Text="Choose among available dates:" VerticalAlignment="Top" Width="220" FontSize="15"/>
             <Button x:Name="ScheduleNext" Content="Next" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="ScheduleNext_Click"/>
 			<Button x:Name="ScheduleCancel" Content="Cancel" HorizontalAlignment="Center" Margin="0,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
             <Button x:Name="SchedulePrev" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="SchedulePrev_Click"/>
-		</Grid>
+            <Button Name="Oct3rd" Content="3" Background="Coral" HorizontalAlignment="Left" Margin="462,230,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" />
+            <Button Name="Oct17th" Content="17" Background="Coral" HorizontalAlignment="Left" Margin="462,366,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R"/>
+            <Button Name="Oct31th" Content="31" Background="Coral" HorizontalAlignment="Left" Margin="462,504,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R"/>
+        </Grid>
 	</Grid>
 </Window>

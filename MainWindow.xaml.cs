@@ -184,6 +184,7 @@ namespace BusApp
             ScheduleGrid.Visibility = Visibility.Visible;
 
             Step2Desc.Text = "Showing trips from " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + ":";
+
         }
     }
 }
