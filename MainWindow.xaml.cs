@@ -32,8 +32,10 @@ namespace BusApp
 
             mapGrid.Visibility = Visibility.Collapsed;
             ScheduleGrid.Visibility = Visibility.Collapsed;
+            TimeGrid.Visibility = Visibility.Collapsed;
 
             TicketAmount_Update();
+            PaymentGrid.Visibility = Visibility.Collapsed;
         }
 
         #region Map Grid Functions
@@ -45,6 +47,7 @@ namespace BusApp
                 mapGrid.Visibility = Visibility.Visible;
                 ScheduleGrid.Visibility = Visibility.Collapsed;
                 TimeGrid.Visibility = Visibility.Collapsed;
+                PaymentGrid.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -178,6 +181,7 @@ namespace BusApp
             mapGrid.Visibility = Visibility.Collapsed;
             ScheduleGrid.Visibility = Visibility.Collapsed;
             TimeGrid.Visibility = Visibility.Collapsed;
+            PaymentGrid.Visibility = Visibility.Collapsed;
         }
 
         private void ShowMapGrid()
@@ -186,6 +190,7 @@ namespace BusApp
             mapGrid.Visibility = Visibility.Visible;
             ScheduleGrid.Visibility = Visibility.Collapsed;
             TimeGrid.Visibility = Visibility.Collapsed;
+            PaymentGrid.Visibility = Visibility.Collapsed;
         }
 
         private void ShowScheduleGrid()
@@ -194,6 +199,7 @@ namespace BusApp
             mapGrid.Visibility = Visibility.Collapsed;
             ScheduleGrid.Visibility = Visibility.Visible;
             TimeGrid.Visibility = Visibility.Collapsed;
+            PaymentGrid.Visibility = Visibility.Collapsed;
 
             Step2Desc.Text = "Showing trips from " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + ":";
             
@@ -205,9 +211,19 @@ namespace BusApp
             mapGrid.Visibility = Visibility.Collapsed;
             ScheduleGrid.Visibility = Visibility.Collapsed;
             TimeGrid.Visibility = Visibility.Visible;
+            PaymentGrid.Visibility = Visibility.Collapsed;
 
             AvailableTime.Text = "Choose among available departure times for October "+depDate+" from "+DepartingCityTextBox.Text+ " to "+ArrivingCityTextBox.Text+" :";
+        }
+        private void ShowPaymentGrid()
+        {
+            HomeGrid.Visibility = Visibility.Collapsed;
+            mapGrid.Visibility = Visibility.Collapsed;
+            ScheduleGrid.Visibility = Visibility.Collapsed;
+            TimeGrid.Visibility = Visibility.Collapsed;
+            PaymentGrid.Visibility = Visibility.Visible;
 
+            AvailableTime.Text = "Choose among available departure times for October " + depDate + " from " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + " :";
         }
         #endregion
 
@@ -238,12 +254,16 @@ namespace BusApp
         }
         #endregion
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ShowPaymentGrid();
+        }
+
         #region Payment Grid Functions
 
         int TICKET_MIN_AMOUNT = 1;
         int TICKET_MAX_AMOUNT = 99;
         double TICKET_PRICE = 15.00;
-
         private void TicketDecBtn_Click(object sender, RoutedEventArgs e)
         {
             int ticketAmount = Convert.ToInt32(TicketTextbox.Text);

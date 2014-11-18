@@ -522,7 +522,7 @@
             <Label Content="Step 1: Specify trip" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
             <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
         </Grid>
-        <Grid x:Name="HomeGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" Background="White" d:IsHidden="True">
+        <Grid x:Name="HomeGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" Background="White">
             <Path x:Name="Logo6" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FF78DC00" HorizontalAlignment="Left" Height="189" Margin="566,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
                 <Path.RenderTransform>
                     <TransformGroup>
@@ -635,11 +635,12 @@
         </Grid>
         <Grid x:Name="TimeGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" d:IsHidden="True">
             <TextBlock x:Name="AvailableTime" Width="733.5" FontSize="24" TextAlignment="Left" TextWrapping="Wrap" FontWeight="Bold" />
+            <Button Content="Next" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="379.5,571.5,0,0" Click="Button_Click"/>
         </Grid>
         <Grid x:Name="PaymentGrid" Background="White">
             <Label x:Name="StepLabel" Content="Step 5: Payment" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
             <Rectangle x:Name="TicketLabelBG" Fill="#FFE4E4E4" HorizontalAlignment="Left" Height="128.337" VerticalAlignment="Top" Width="564" Margin="109.5,171.999,0,0"/>
-            <TextBlock x:Name="TicketLabel" HorizontalAlignment="Left" Margin="143,171.999,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="33.333" Text="How many tickets do you require?"/>
+            <TextBlock x:Name="TicketLabel" HorizontalAlignment="Left" Margin="143,171.999,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" Text="How many tickets do you require?"/>
             <Rectangle x:Name="TotalBG" Fill="#FF000004" HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="564" Margin="109.5,305.336,0,0"/>
             <Button x:Name="TicketIncBtn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="477,230.335,0,0" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="TicketIncBtn_Click">
             	<ed:RegularPolygon x:Name="TicketIncreaseArrow" Fill="#FF000099" HorizontalAlignment="Left" Height="56.5" InnerRadius="1" PointCount="3" Stretch="Fill" VerticalAlignment="Top" Width="56.5" RenderTransformOrigin="0.5,0.5">
@@ -665,19 +666,19 @@
             		</ed:RegularPolygon.RenderTransform>
             	</ed:RegularPolygon>
             </Button>
-            <TextBox x:Name="TicketTextbox" HorizontalAlignment="Left" Height="56.336" Margin="342.5,233.5,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="103.5" BorderBrush="#FF9191E6" FontSize="33.333" TextAlignment="Center" KeyUp="TicketAmountTextBox_KeyUp"/>
-            <Label x:Name="TotalLabel" Content="TOTAL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="273,312,0,0" FontSize="33.333" FontWeight="Bold" Foreground="White"/>
-            <Label x:Name="TotalAmount" Content="$0.00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="408,312,0,0" FontSize="33.333" FontWeight="Bold" Foreground="#FFF18400"/>
+            <TextBox x:Name="TicketTextbox" HorizontalAlignment="Left" Height="56.336" Margin="342.5,233.5,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="103.5" BorderBrush="#FF9191E6" FontSize="26.667" TextAlignment="Center" KeyUp="TicketAmountTextBox_KeyUp"/>
+            <Label x:Name="TotalLabel" Content="TOTAL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="273,312,0,0" FontSize="24" FontWeight="Bold" Foreground="White"/>
+            <Label x:Name="TotalAmount" Content="$0.00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="408,312,0,0" FontSize="24" FontWeight="Bold" Foreground="#FFF18400"/>
             <Rectangle x:Name="PaymentLabelBG" Fill="#FFE4E4E4" HorizontalAlignment="Left" Height="133.663" VerticalAlignment="Top" Width="564" Margin="109.5,388.673,0,0"/>
-            <TextBlock x:Name="PaymentLabel" HorizontalAlignment="Left" Margin="200,396.173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="33.333" Text="How do you want to pay?" TextAlignment="Center"/>
-            <Button x:Name="CardBtn" Content="CARD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="123" Margin="256.5,453,0,0" Height="63.63" FontSize="33.333" FontWeight="Bold" Foreground="#FF000099" Background="#FFC8C8EA"/>
-            <Button x:Name="CashBtn" Content="CASH" HorizontalAlignment="Left" VerticalAlignment="Top" Width="123" Margin="408,453,0,0" Height="63.63" FontSize="33.333" FontWeight="Bold" Foreground="#FF000099" Background="#FFC8C8EA"/>
-            <Rectangle x:Name="PaymentInfoBG" Fill="#FF000004" HorizontalAlignment="Left" Height="54.163" VerticalAlignment="Top" Width="564" Margin="109.5,527.63,0,0"/>
-            <Label x:Name="PaymentInfoLabel" Content="Accepting all major forms of credit card" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="109.5,529.13,0,0" FontSize="18.667" Foreground="White" Width="564" Height="54.163"/>
-            <TextBlock x:Name="LeavingLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="29,79.5,0,0" FontSize="24" TextAlignment="Right" Width="593"/>
-            <TextBlock x:Name="ArrivingLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Arriving at Vancouver on Oct 22, 2014 at 3:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="29,118.5,0,0" FontSize="24" TextAlignment="Right" Width="593"/>
+            <TextBlock x:Name="PaymentLabel" HorizontalAlignment="Left" Margin="200,396.173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" Text="How do you want to pay?" TextAlignment="Center"/>
+            <Button x:Name="CardBtn" Content="CARD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="123" Margin="256.5,453,0,0" Height="63.63" FontSize="26.667" FontWeight="Bold" Foreground="#FF000099" Background="#FFC8C8EA"/>
+            <Button x:Name="CashBtn" Content="CASH" HorizontalAlignment="Left" VerticalAlignment="Top" Width="123" Margin="408,453,0,0" Height="63.63" FontSize="26.667" FontWeight="Bold" Foreground="#FF000099" Background="#FFC8C8EA"/>
+            <Rectangle x:Name="PaymentInfoBG" Fill="#FF000004" HorizontalAlignment="Left" Height="36.163" VerticalAlignment="Top" Width="564" Margin="109.5,527.63,0,0"/>
+            <Label x:Name="PaymentInfoLabel" Content="Accepting all major forms of credit card" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="109.5,529.13,0,0" FontSize="16" Foreground="White" Width="564" Height="34.663"/>
+            <TextBlock x:Name="LeavingLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="29,79.5,0,0" FontSize="18.667" TextAlignment="Right" Width="593"/>
+            <TextBlock x:Name="ArrivingLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Arriving at Vancouver on Oct 22, 2014 at 3:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="29,118.5,0,0" FontSize="18.667" TextAlignment="Right" Width="593"/>
             <Rectangle x:Name="BusBG" Fill="Black" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="99" Margin="646,91.5,0,0"/>
-            <TextBlock x:Name="BusText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bus #3" VerticalAlignment="Top" Foreground="White" Margin="656,99,0,0" FontSize="26.667"/>
+            <TextBlock x:Name="BusText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bus #3" VerticalAlignment="Top" Foreground="White" Margin="656,99,0,0" FontSize="18.667"/>
         </Grid>
     </Grid>
 </Window>
