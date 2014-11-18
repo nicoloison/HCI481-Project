@@ -625,17 +625,19 @@
             <TextBlock x:Name="AvailableDates" HorizontalAlignment="Left" Height="39" Margin="20,212,0,0" TextWrapping="Wrap" Text="Choose among available dates:" VerticalAlignment="Top" Width="220" FontSize="15"/>
             <TextBlock x:Name="ChosenDepDates" HorizontalAlignment="Left" Height="39" Margin="20,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="15" Visibility="Collapsed"/>
             <TextBlock x:Name="ChosenRetDates" HorizontalAlignment="Left" Height="39" Margin="20,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="15" Visibility="Collapsed"/>
-            <Button x:Name="ScheduleNext" Content="Next" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="ScheduleNext_Click"/>
-			<Button x:Name="ScheduleCancel" Content="Cancel" HorizontalAlignment="Center" Margin="0,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
+            <Button x:Name="ScheduleNext" Content="Next" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="ScheduleNext_Click" Visibility="Collapsed"/>
+            <Button x:Name="ScheduleNext2" Content="Next" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="ScheduleNext2_Click" Visibility="Collapsed"/>
+            <Button x:Name="ScheduleCancel" Content="Cancel" HorizontalAlignment="Center" Margin="0,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
             <Button x:Name="SchedulePrev" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="SchedulePrev_Click"/>
+            <Button x:Name="SchedulePrev2" Content="Previous2" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="SchedulePrev2_Click" Visibility="Collapsed"/>
             <Button Name="Oct3rd" Content="3" Background="Coral" HorizontalAlignment="Left" Margin="462,230,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Click="Oct3rdClicked"/>
             <Button Name="Oct17th" Content="17" Background="Coral" HorizontalAlignment="Left" Margin="462,366,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Click="Oct17thClicked"/>
             <Button Name="Oct12th" Content="12" Background="Gold" HorizontalAlignment="Left" Margin="608,298,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Visibility="Hidden" Click="Oct12thClicked"/>
             <Button Name="Oct26th" Content="26" Background="Gold" HorizontalAlignment="Left" Margin="608,437,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Visibility="Hidden" Click="Oct26thClicked"/>
         </Grid>
-        <Grid x:Name="TimeGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" d:IsHidden="True">
+        <Grid x:Name="TimeGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792">
             <TextBlock x:Name="AvailableTime" Width="733.5" FontSize="24" TextAlignment="Left" TextWrapping="Wrap" FontWeight="Bold" />
-            <Button x:Name="Onepm" Background="Coral" Margin="182,388,581.6,202" Panel.ZIndex="9" RenderTransformOrigin="0.907,1.044" Click="Onepm_button_clicked" Visibility="Collapsed">
+            <Button x:Name="Onepm" Background="Coral" Margin="82,288,681.6,302" RenderTransformOrigin="0.907,1.044" Click="Onepm_button_clicked" Visibility="Collapsed" >
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid>
@@ -649,11 +651,11 @@
                                             </TransformGroup>
                                         </RadialGradientBrush.Transform>
                                         <GradientStop Offset="0"
-											Color="SaddleBrown" />
+											Color="AliceBlue" />
                                         <GradientStop Offset="1"
-											Color="Coral" />
+											Color="CornflowerBlue" />
                                         <GradientStop Offset="1"
-											Color="Gold" />
+											Color="CornflowerBlue" />
                                     </RadialGradientBrush>
                                 </Ellipse.Fill>
                             </Ellipse>
@@ -663,7 +665,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="Nineam" Background="Coral" Margin="182,188,581.6,402" Panel.ZIndex="9" RenderTransformOrigin="0.907,1.044" Click="Nineam_button_clicked" Visibility="Collapsed">
+            <Button x:Name="Nineam" Background="Coral" Margin="82,88,681.6,502" RenderTransformOrigin="0.907,1.044" Click="Nineam_button_clicked" Visibility="Collapsed"  >
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid>
@@ -677,11 +679,11 @@
                                             </TransformGroup>
                                         </RadialGradientBrush.Transform>
                                         <GradientStop Offset="0"
-											Color="SaddleBrown" />
+											Color="AliceBlue" />
                                         <GradientStop Offset="1"
-											Color="Coral" />
+											Color="CornflowerBlue" />
                                         <GradientStop Offset="1"
-											Color="Gold" />
+											Color="CornflowerBlue" />
                                     </RadialGradientBrush>
                                 </Ellipse.Fill>
                             </Ellipse>
@@ -691,7 +693,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="Elevenam" Background="Coral" Margin="182,288,581.6,302" Panel.ZIndex="9" RenderTransformOrigin="0.907,1.044" Click="Elevenam_button_clicked" Visibility="Collapsed">
+            <Button x:Name="Elevenam" Background="Coral" Margin="82,188,681.6,402" RenderTransformOrigin="0.907,1.044" Click="Elevenam_button_clicked" Visibility="Collapsed">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid>
@@ -705,11 +707,11 @@
                                             </TransformGroup>
                                         </RadialGradientBrush.Transform>
                                         <GradientStop Offset="0"
-											Color="SaddleBrown" />
+											Color="AliceBlue" />
                                         <GradientStop Offset="1"
-											Color="Coral" />
+											Color="CornflowerBlue" />
                                         <GradientStop Offset="1"
-											Color="Gold" />
+											Color="CornflowerBlue" />
                                     </RadialGradientBrush>
                                 </Ellipse.Fill>
                             </Ellipse>
@@ -719,7 +721,12 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="NextTime" Content="Next" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="NextTime_Click" Visibility="Collapsed"/>
+            <TextBlock x:Name="NineamDetails" FontSize="20" TextAlignment="Left" TextWrapping="Wrap" FontFamily="Adobe Heiti Std R" Margin="150,88,180,100" />
+            <TextBlock x:Name="ElevenamDetails" FontSize="20" TextAlignment="Left" TextWrapping="Wrap" FontFamily="Adobe Heiti Std R" Margin="150,188,180,100" />
+            <TextBlock x:Name="OnepmDetails" FontSize="20" TextAlignment="Left" TextWrapping="Wrap" FontFamily="Adobe Heiti Std R" Margin="150,288,180,100" />
+            <TextBlock x:Name="TimeChoice"  FontWeight="Bold" FontSize="20" TextAlignment="Left" TextWrapping="Wrap" FontFamily="Adobe Heiti Std R" Margin="150,388,180,50" />
+            <Button x:Name="NextTime1" Content="Next" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="NextTime1_Click" Visibility="Collapsed" />
+            <Button x:Name="PrevTime1" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="PrevTime1_Click" Visibility="Collapsed"/>
         </Grid>
     </Grid>
 </Window>
