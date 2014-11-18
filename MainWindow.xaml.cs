@@ -32,6 +32,8 @@ namespace BusApp
 
             mapGrid.Visibility = Visibility.Collapsed;
             ScheduleGrid.Visibility = Visibility.Collapsed;
+
+            TicketAmount_Update();
         }
 
         #region Map Grid Functions
@@ -234,6 +236,73 @@ namespace BusApp
             ChosenRetDates.Visibility = Visibility.Visible;
             ChosenRetDates.Text = "You choose return on October " + retDate;
         }
+        #endregion
+
+        #region Payment Grid Functions
+
+        int TICKET_MIN_AMOUNT = 1;
+        int TICKET_MAX_AMOUNT = 99;
+        double TICKET_PRICE = 15.00;
+
+        private void TicketDecBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int ticketAmount = Convert.ToInt32(TicketTextbox.Text);
+            if (ticketAmount > TICKET_MIN_AMOUNT)
+            {
+                int newAmount = --ticketAmount;
+                TicketTextbox.Text = newAmount.ToString();
+                TicketAmount_Update();
+            }
+        }
+
+        private void TicketIncBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int ticketAmount = Convert.ToInt32(TicketTextbox.Text);
+            if (ticketAmount < TICKET_MAX_AMOUNT)
+            {
+                int newAmount = ++ticketAmount;
+                TicketTextbox.Text = newAmount.ToString();
+                TicketAmount_Update();
+            }
+        }
+        private void TicketAmount_Update()
+        {
+            int ticketAmount = Convert.ToInt32(TicketTextbox.Text);
+            double newTotal = TICKET_PRICE * ticketAmount;
+            TotalAmount.Content = "$"+ string.Format("{0:0.00}", newTotal);
+
+            if (ticketAmount == TICKET_MIN_AMOUNT)
+            {
+                TicketDecBtn.IsEnabled = false;
+                TicketDecreaseArrow.Fill = new SolidColorBrush(Color.FromRgb(176, 176, 176)); ;
+            }
+            else if (ticketAmount == TICKET_MAX_AMOUNT)
+            {
+                TicketIncBtn.IsEnabled = false;
+                TicketIncreaseArrow.Fill = new SolidColorBrush(Color.FromRgb(176, 176, 176));
+            }
+            else
+            {
+                TicketDecBtn.IsEnabled = true;
+                TicketDecreaseArrow.Fill = new SolidColorBrush(Color.FromRgb(0, 0, 153));
+                TicketIncBtn.IsEnabled = true;
+                TicketIncreaseArrow.Fill = new SolidColorBrush(Color.FromRgb(0, 0, 153));
+            }
+        }
+
+        private void TicketAmountTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                int ticketAmount = Convert.ToInt32(TicketTextbox.Text);
+                if (ticketAmount < TICKET_MIN_AMOUNT)
+                {
+                    TicketTextbox.Text = "1";
+                }
+                TicketAmount_Update();
+            }
+        }
+
         #endregion
     }
 }
