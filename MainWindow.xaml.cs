@@ -23,6 +23,7 @@ namespace BusApp
         private int count_click = 0, ticketCount;
         private double x_mouse, y_mouse, x_depart, y_depart, x_arrive, y_arrive, totalCost;
         public static string depDate,depTime,retDate,repTime;
+        public bool optchecked=false, datechecked=false; 
         public MainWindow()
         {
             InitializeComponent();
@@ -40,12 +41,18 @@ namespace BusApp
             StCheck.IsChecked = false;
             TripOptionsResult.Text = "You choose round trip option.";
             TripOptionsResult.Visibility = Visibility.Visible;
-            ScheduleNext.Visibility = Visibility.Visible;
+            optchecked = true;
+            if (optchecked== true && datechecked==true)
+            {
+                ScheduleNext.Visibility = Visibility.Visible;
+            }
         }
 
         private void RoundTrip_Unchecked(object sender, RoutedEventArgs e) 
         {
             TripOptionsResult.Visibility = Visibility.Collapsed;
+            optchecked = false;
+            ScheduleNext.Visibility = Visibility.Collapsed;
         }
 
         private void SignleTrip_Checked(object sender, RoutedEventArgs e)
@@ -54,6 +61,7 @@ namespace BusApp
             TripOptionsResult.Text = "You choose single trip option. This option is not available right now. Please choose round trip option.";
             TripOptionsResult.Visibility = Visibility.Visible;
             ScheduleNext.Visibility = Visibility.Collapsed;
+            optchecked = false;
         }
 
         private void SignleTrip_Unchecked(object sender, RoutedEventArgs e)
@@ -456,8 +464,13 @@ namespace BusApp
 
             depDate = Oct3rd.Content.ToString();
             ChosenDepDates.Visibility = Visibility.Visible;
-            ScheduleNext.Visibility = Visibility.Visible;
+
             ChosenDepDates.Text = "You chose departure on October " + depDate + ".";
+            datechecked = true;
+            if (optchecked == true && datechecked == true)
+            {
+                ScheduleNext.Visibility = Visibility.Visible;
+            }
         }
         private void Oct17thButtonClicked(object sender, RoutedEventArgs e)
         {
@@ -470,6 +483,12 @@ namespace BusApp
             depDate = Oct17th.Content.ToString();
             ChosenDepDates.Visibility = Visibility.Visible;
             ScheduleNext.Visibility = Visibility.Visible;
+
+            datechecked = true;
+            if (optchecked == true && datechecked == true)
+            {
+                ScheduleNext.Visibility = Visibility.Visible;
+            }
             ChosenDepDates.Text = "You chose departure on October " + depDate + ".";
         }
         private void Oct12thButtonClicked(object sender, RoutedEventArgs e)
