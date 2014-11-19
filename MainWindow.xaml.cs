@@ -40,6 +40,7 @@ namespace BusApp
             StCheck.IsChecked = false;
             TripOptionsResult.Text = "You choose round trip option.";
             TripOptionsResult.Visibility = Visibility.Visible;
+            ScheduleNext.Visibility = Visibility.Visible;
         }
 
         private void RoundTrip_Unchecked(object sender, RoutedEventArgs e) 
@@ -52,6 +53,7 @@ namespace BusApp
             RdtCheck.IsChecked = false;
             TripOptionsResult.Text = "You choose single trip option. This option is not available right now. Please choose round trip option.";
             TripOptionsResult.Visibility = Visibility.Visible;
+            ScheduleNext.Visibility = Visibility.Collapsed;
         }
 
         private void SignleTrip_Unchecked(object sender, RoutedEventArgs e)
