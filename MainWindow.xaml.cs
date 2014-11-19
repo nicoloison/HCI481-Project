@@ -148,6 +148,7 @@ namespace BusApp
 
         #endregion
 
+        #region Next and Previous Buttons
         private void Next_Click(object sender, RoutedEventArgs e)
         {
             ShowScheduleGrid();
@@ -161,7 +162,7 @@ namespace BusApp
             ShowHomeGrid();
         }
 
-        private void PrevTime1_Click(object sender, RoutedEventArgs e)
+        private void PrevTime_Click(object sender, RoutedEventArgs e)
         {
             ShowScheduleGrid();
         }
@@ -169,40 +170,37 @@ namespace BusApp
         {
             ShowTimesGrid();
         }
-      
-        private void ScheduleNext2_Click(object sender, RoutedEventArgs e) 
+
+        private void ScheduleNextReturn_Click(object sender, RoutedEventArgs e) 
         {
-            ShowTimesGrid();
+            ShowTimesGridReturn();
         }
+
+        private void PrevTimeReturn_Click(object sender, RoutedEventArgs e)
+        {
+            SchedulePrevReturn.Visibility = Visibility.Visible;
+            ShowScheduleGridReturn();
+        }
+      
         private void SchedulePrev_Click(object sender, RoutedEventArgs e)
         {
             ShowMapGrid();
         }
-        private void SchedulePrev2_Click()
+
+        private void SchedulePrevReturn_Click(object sender, RoutedEventArgs e) 
         {
             ShowTimesGrid();
         }
-        private void NextTime2_Click(object sender, RoutedEventArgs e) 
+       
+        private void NextTimeReturn_Click(object sender, RoutedEventArgs e) 
         {
             //to implement show confirmation grid
         }
-        private void NextTime1_Click(object sender, RoutedEventArgs e) 
+        private void NextTime_Click(object sender, RoutedEventArgs e) 
         {
-            Oct12th.Visibility = Visibility.Visible;
-            Oct26th.Visibility = Visibility.Visible;
-            Oct17th.Visibility = Visibility.Collapsed;
-            Oct3rd.Visibility = Visibility.Collapsed;
-            Step2Desc.Visibility = Visibility.Collapsed;
-            Step4Desc.Visibility = Visibility.Visible;
-            Step2Label.Visibility = Visibility.Collapsed;
-            Step4Label.Visibility = Visibility.Visible;
-            ChosenDepDates.Visibility = Visibility.Collapsed;
-            ChosenRetDates.Visibility = Visibility.Visible;
-            SchedulePrev.Visibility = Visibility.Collapsed;
-            SchedulePrev2.Visibility = Visibility.Visible;
-
-            ShowScheduleGrid();
+            ShowScheduleGridReturn();
         }
+        #endregion
 
         #region Grid Handlers
         private void ShowHomeGrid()
@@ -210,7 +208,9 @@ namespace BusApp
             HomeGrid.Visibility = Visibility.Visible;
             mapGrid.Visibility = Visibility.Collapsed;
             ScheduleGrid.Visibility = Visibility.Collapsed;
+            ScheduleGridReturn.Visibility = Visibility.Collapsed;
             TimeGrid.Visibility = Visibility.Collapsed;
+            TimeGridReturn.Visibility = Visibility.Collapsed;
         }
 
         private void ShowMapGrid()
@@ -218,17 +218,22 @@ namespace BusApp
             HomeGrid.Visibility = Visibility.Collapsed;
             mapGrid.Visibility = Visibility.Visible;
             ScheduleGrid.Visibility = Visibility.Collapsed;
+            ScheduleGridReturn.Visibility = Visibility.Collapsed;
             TimeGrid.Visibility = Visibility.Collapsed;
+            TimeGridReturn.Visibility = Visibility.Collapsed;
         }
 
         private void ShowScheduleGrid()
         {
             HomeGrid.Visibility = Visibility.Collapsed;
             mapGrid.Visibility = Visibility.Collapsed;
-            TimeGrid.Visibility = Visibility.Collapsed;
             ScheduleGrid.Visibility = Visibility.Visible;
+            ScheduleGridReturn.Visibility = Visibility.Collapsed;
+            TimeGrid.Visibility = Visibility.Collapsed;
+            TimeGridReturn.Visibility = Visibility.Collapsed;
+
             Step2Desc.Text = "Showing trips from " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + ":";
-            PrevTime1.Visibility = Visibility.Visible;
+            PrevTime.Visibility = Visibility.Visible;
         }
 
         private void ShowTimesGrid()
@@ -236,13 +241,13 @@ namespace BusApp
             HomeGrid.Visibility = Visibility.Collapsed;
             mapGrid.Visibility = Visibility.Collapsed;
             ScheduleGrid.Visibility = Visibility.Collapsed;
+            ScheduleGridReturn.Visibility = Visibility.Collapsed;
             TimeGrid.Visibility = Visibility.Visible;
+            TimeGridReturn.Visibility = Visibility.Collapsed;
+
             Onepm.Visibility = Visibility.Visible;
-            OnepmDetails.Visibility = Visibility.Visible;
-            Elevenam.Visibility = Visibility.Visible;
             Nineam.Visibility = Visibility.Visible;
-            SchedulePrev.Visibility = Visibility.Collapsed;
-            SchedulePrev2.Visibility = Visibility.Visible;
+            Elevenam.Visibility = Visibility.Visible;
 
             OnepmDetails.Text = "Departure at 1:00pm on October "+depDate+"and arrival at 8:00pm on October "+ depDate;
             NineamDetails.Text = "Departure at 9:00am on October " + depDate + "and arrival at 4:00pm on October " + depDate;
@@ -251,6 +256,43 @@ namespace BusApp
             AvailableTime.Text = "Step 3: Choose among available departure times for October "+depDate+" from "+DepartingCityTextBox.Text+ " to "+ArrivingCityTextBox.Text+" :";
             
         }
+        private void ShowScheduleGridReturn()
+        {
+            HomeGrid.Visibility = Visibility.Collapsed;
+            mapGrid.Visibility = Visibility.Collapsed;
+            ScheduleGrid.Visibility = Visibility.Collapsed;
+            ScheduleGridReturn.Visibility = Visibility.Visible;
+            TimeGrid.Visibility = Visibility.Collapsed;
+            TimeGridReturn.Visibility = Visibility.Collapsed;
+
+            Step4Desc.Text = "Showing trips from " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + ":";
+            PrevTimeReturn.Visibility = Visibility.Visible;
+            AvailableDatesReturn.Text = "";
+
+        }
+        private void ShowTimesGridReturn()
+        {
+            HomeGrid.Visibility = Visibility.Collapsed;
+            mapGrid.Visibility = Visibility.Collapsed;
+            ScheduleGrid.Visibility = Visibility.Collapsed;
+            ScheduleGridReturn.Visibility = Visibility.Collapsed;
+            TimeGrid.Visibility = Visibility.Collapsed;
+            TimeGridReturn.Visibility = Visibility.Visible;
+
+            OnepmReturn.Visibility = Visibility.Visible;
+            OnepmDetailsReturn.Visibility = Visibility.Visible;
+            ElevenamReturn.Visibility = Visibility.Visible;
+            NineamReturn.Visibility = Visibility.Visible;
+            SchedulePrevReturn.Visibility = Visibility.Collapsed;
+
+            OnepmDetailsReturn.Text = "Departure at 1:00pm on October " + depDate + " and arrival at 8:00pm on October " + depDate;
+            NineamDetailsReturn.Text = "Departure at 9:00am on October " + depDate + " and arrival at 4:00pm on October " + depDate;
+            ElevenamDetailsReturn.Text = "Departure at 11:00am on October " + depDate + " and arrival at 6:00pm on October " + depDate;
+
+            AvailableTimeReturn.Text = "Step 5: Choose among available departure times for October " + depDate + " from " + ArrivingCityTextBox.Text + " to " + DepartingCityTextBox.Text + " :";
+            TimeChoiceReturn.Text = "";
+        }
+
         #endregion
 
         #region Dates Buttons Handler
@@ -272,37 +314,59 @@ namespace BusApp
         {
             retDate = Oct12th.Content.ToString();
             ChosenRetDates.Visibility = Visibility.Visible;
-            ScheduleNext2.Visibility = Visibility.Visible;
+            ScheduleNextReturn.Visibility = Visibility.Visible;
             ChosenRetDates.Text = "You chose return on October " + retDate + ".";
         }
         private void Oct26thClicked(object sender, RoutedEventArgs e)
         {
             retDate = Oct26th.Content.ToString();
             ChosenRetDates.Visibility = Visibility.Visible;
-            ScheduleNext2.Visibility = Visibility.Visible;
+            ScheduleNextReturn.Visibility = Visibility.Visible;
             ChosenRetDates.Text = "You chose return on October " + retDate + ".";
         }
+
         #endregion
 
         #region Time Buttons Handlers
-        private void Onepm_button_clicked(object sender, RoutedEventArgs e) 
+        private void OnepmReturn_button_clicked(object sender, RoutedEventArgs e) 
+        {
+            depTime = "1:00 pm";
+            TimeChoiceReturn.Text = "You chose departure at " + depTime + ".\n\nClick Next to validate time.";
+            NextTimeReturn.Visibility = Visibility.Visible;
+        }
+        private void NineamReturn_button_clicked(object sender, RoutedEventArgs e)
+        {
+            depTime = "9:00 am";
+            TimeChoiceReturn.Text = "You chose departure at " + depTime + ".\n\nClick Next to validate time.";
+            NextTimeReturn.Visibility = Visibility.Visible;
+        }
+        private void ElevenamReturn_button_clicked(object sender, RoutedEventArgs e)
+        {
+            depTime = "11:00 am";
+            TimeChoiceReturn.Text = "You chose departure at " + depTime + ".\n\nClick Next to validate time.";
+            NextTimeReturn.Visibility = Visibility.Visible;
+        }
+
+        private void Onepm_button_clicked(object sender, RoutedEventArgs e)
         {
             depTime = "1:00 pm";
             TimeChoice.Text = "You chose departure at " + depTime + ".\n\nClick Next to validate time.";
-            NextTime1.Visibility = Visibility.Visible;
+            NextTime.Visibility = Visibility.Visible;
         }
         private void Nineam_button_clicked(object sender, RoutedEventArgs e)
         {
             depTime = "9:00 am";
             TimeChoice.Text = "You chose departure at " + depTime + ".\n\nClick Next to validate time.";
-            NextTime1.Visibility = Visibility.Visible;
+            NextTime.Visibility = Visibility.Visible;
         }
         private void Elevenam_button_clicked(object sender, RoutedEventArgs e)
         {
             depTime = "11:00 am";
             TimeChoice.Text = "You chose departure at " + depTime + ".\n\nClick Next to validate time.";
-            NextTime1.Visibility = Visibility.Visible;
+            NextTime.Visibility = Visibility.Visible;
         }
+
+
         #endregion
 
         private void ClearUIElements() 
@@ -318,7 +382,7 @@ namespace BusApp
             Elevenam.Visibility = Visibility.Collapsed;
             Nineam.Visibility = Visibility.Collapsed;
             Next.Visibility = Visibility.Collapsed;
-            NextTime1.Visibility = Visibility.Collapsed;
+            NextTime.Visibility = Visibility.Collapsed;
            
         }
     }
