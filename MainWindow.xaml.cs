@@ -30,12 +30,8 @@ namespace BusApp
             this.MouseMove += new MouseEventHandler(pictureBox1_MouseUp);
             this.MouseLeftButtonDown += MainWindow_MouseLeftButtonDown;
 
-            mapGrid.Visibility = Visibility.Collapsed;
-            ScheduleGrid.Visibility = Visibility.Collapsed;
-            TimeGrid.Visibility = Visibility.Collapsed;
-
+            ShowHomeGrid();
             TicketAmount_Update();
-            PaymentGrid.Visibility = Visibility.Collapsed;
         }
 
         #region Map Grid Functions
@@ -182,6 +178,8 @@ namespace BusApp
             ScheduleGrid.Visibility = Visibility.Collapsed;
             TimeGrid.Visibility = Visibility.Collapsed;
             PaymentGrid.Visibility = Visibility.Collapsed;
+            CreditPopupGrid.Visibility = Visibility.Collapsed;
+            TicketGrid.Visibility = Visibility.Collapsed;
         }
 
         private void ShowMapGrid()
@@ -191,6 +189,8 @@ namespace BusApp
             ScheduleGrid.Visibility = Visibility.Collapsed;
             TimeGrid.Visibility = Visibility.Collapsed;
             PaymentGrid.Visibility = Visibility.Collapsed;
+            CreditPopupGrid.Visibility = Visibility.Collapsed;
+            TicketGrid.Visibility = Visibility.Collapsed;
         }
 
         private void ShowScheduleGrid()
@@ -200,6 +200,8 @@ namespace BusApp
             ScheduleGrid.Visibility = Visibility.Visible;
             TimeGrid.Visibility = Visibility.Collapsed;
             PaymentGrid.Visibility = Visibility.Collapsed;
+            CreditPopupGrid.Visibility = Visibility.Collapsed;
+            TicketGrid.Visibility = Visibility.Collapsed;
 
             Step2Desc.Text = "Showing trips from " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + ":";
             
@@ -212,6 +214,8 @@ namespace BusApp
             ScheduleGrid.Visibility = Visibility.Collapsed;
             TimeGrid.Visibility = Visibility.Visible;
             PaymentGrid.Visibility = Visibility.Collapsed;
+            CreditPopupGrid.Visibility = Visibility.Collapsed;
+            TicketGrid.Visibility = Visibility.Collapsed;
 
             AvailableTime.Text = "Choose among available departure times for October "+depDate+" from "+DepartingCityTextBox.Text+ " to "+ArrivingCityTextBox.Text+" :";
         }
@@ -222,6 +226,8 @@ namespace BusApp
             ScheduleGrid.Visibility = Visibility.Collapsed;
             TimeGrid.Visibility = Visibility.Collapsed;
             PaymentGrid.Visibility = Visibility.Visible;
+            CreditPopupGrid.Visibility = Visibility.Collapsed;
+            TicketGrid.Visibility = Visibility.Collapsed;
 
             AvailableTime.Text = "Choose among available departure times for October " + depDate + " from " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + " :";
         }
@@ -253,11 +259,6 @@ namespace BusApp
             ChosenRetDates.Text = "You choose return on October " + retDate;
         }
         #endregion
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ShowPaymentGrid();
-        }
 
         #region Payment Grid Functions
 
@@ -322,7 +323,28 @@ namespace BusApp
                 TicketAmount_Update();
             }
         }
+        private void PaymentPrevious_Click(object sender, RoutedEventArgs e)
+        {
+            ShowTimesGrid();
+        }
+
+        private void PaymentCancel_Click(object sender, RoutedEventArgs e)
+        {
+            ShowHomeGrid();
+            TicketTextbox.Text = "1";
+            TicketAmount_Update();
+        }
+
+        private void PaymentNext_Click(object sender, RoutedEventArgs e)
+        {
+            //ShowTicketGrid();
+        }
+        private void CardBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CreditPopupGrid.Visibility = Visibility.Visible;
+        }
 
         #endregion
+
     }
 }
