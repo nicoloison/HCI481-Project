@@ -417,29 +417,53 @@ namespace BusApp
 		#endregion
 
         #region Dates Buttons Handler
-        private void Oct3rdClicked(object sender, RoutedEventArgs e)
+        private void Oct3rdButtonClicked(object sender, RoutedEventArgs e)
         {
+            Oct3rd.Visibility = Visibility.Collapsed;
+            Oct3rdClicked.Visibility = Visibility.Visible;
+
+            Oct17th.Visibility = Visibility.Visible;
+            Oct17thClicked.Visibility = Visibility.Collapsed;
+
             depDate = Oct3rd.Content.ToString();
             ChosenDepDates.Visibility = Visibility.Visible;
             ScheduleNext.Visibility = Visibility.Visible;
             ChosenDepDates.Text = "You chose departure on October " + depDate + ".";
         }
-        private void Oct17thClicked(object sender, RoutedEventArgs e)
+        private void Oct17thButtonClicked(object sender, RoutedEventArgs e)
         {
+            Oct3rd.Visibility = Visibility.Visible;
+            Oct3rdClicked.Visibility = Visibility.Collapsed;
+
+            Oct17th.Visibility = Visibility.Collapsed;
+            Oct17thClicked.Visibility = Visibility.Visible;
+
             depDate = Oct17th.Content.ToString();
             ChosenDepDates.Visibility = Visibility.Visible;
             ScheduleNext.Visibility = Visibility.Visible;
             ChosenDepDates.Text = "You chose departure on October " + depDate + ".";
         }
-        private void Oct12thClicked(object sender, RoutedEventArgs e)
+        private void Oct12thButtonClicked(object sender, RoutedEventArgs e)
         {
+            Oct12th.Visibility = Visibility.Collapsed;
+            Oct12thClicked.Visibility = Visibility.Visible;
+
+            Oct26th.Visibility = Visibility.Visible;
+            Oct26thClicked.Visibility = Visibility.Collapsed;
+
             retDate = Oct12th.Content.ToString();
             ChosenRetDates.Visibility = Visibility.Visible;
             ScheduleNextReturn.Visibility = Visibility.Visible;
             ChosenRetDates.Text = "You chose return on October " + retDate + ".";
         }
-        private void Oct26thClicked(object sender, RoutedEventArgs e)
+        private void Oct26thButtonClicked(object sender, RoutedEventArgs e)
         {
+            Oct12th.Visibility = Visibility.Visible;
+            Oct12thClicked.Visibility = Visibility.Collapsed;
+
+            Oct26th.Visibility = Visibility.Collapsed;
+            Oct26thClicked.Visibility = Visibility.Visible;
+
             retDate = Oct26th.Content.ToString();
             ChosenRetDates.Visibility = Visibility.Visible;
             ScheduleNextReturn.Visibility = Visibility.Visible;
