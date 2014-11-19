@@ -620,7 +620,7 @@
             </Grid.Background>
             <Label x:Name="Step2Label" Content="Step 2: Select a date" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
             <TextBlock x:Name="Step2Desc" HorizontalAlignment="Left" Height="39" Margin="29,71.923,0,0" TextWrapping="Wrap" Text="Showing trips:" VerticalAlignment="Top" Width="733.5" FontSize="24"/>
-            <TextBlock x:Name="AvailableDates" HorizontalAlignment="Left" Height="39" Margin="20,212,0,0" TextWrapping="Wrap" Text="Choose among available dates:" VerticalAlignment="Top" Width="220" FontSize="15"/>
+            <TextBlock x:Name="AvailableDates" HorizontalAlignment="Left" Height="39" Margin="20,212,0,0" TextWrapping="Wrap" Text="Choose among available dates:" VerticalAlignment="Top" FontWeight="Bold" Width="220" FontSize="15"/>
             <TextBlock x:Name="ChosenDepDates" HorizontalAlignment="Left" Height="39" Margin="20,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="15" Visibility="Collapsed"/>
             <Button x:Name="ScheduleNext" Content="Next" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="ScheduleNext_Click" Visibility="Collapsed"/>
             <Button x:Name="ScheduleCancel" Content="Cancel" HorizontalAlignment="Center" Margin="0,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
@@ -629,6 +629,10 @@
             <Button Name="Oct17th" Content="17th" Background="Coral" HorizontalAlignment="Left" Margin="462,366,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Click="Oct17thButtonClicked"/>
             <Button Name="Oct3rdClicked" Content="3rd" Background="Gray" HorizontalAlignment="Left" Margin="462,230,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Click="Oct3rdButtonClicked" Visibility="Collapsed"/>
             <Button Name="Oct17thClicked" Content="17th" Background="Gray" HorizontalAlignment="Left" Margin="462,366,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Click="Oct17thButtonClicked" Visibility="Collapsed"/>
+            <TextBlock x:Name="TripOptions" HorizontalAlignment="Left" Height="39" Margin="20,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="15" FontWeight="Bold" Text="Trip Option:"/>
+            <TextBlock x:Name="TripOptionsResult" HorizontalAlignment="Left" Height="60" Margin="20,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="15" Visibility="Collapsed"/>
+            <CheckBox x:Name="RdtCheck" Content="Round Trip" HorizontalAlignment="Left" Margin="20,400,0,0" VerticalAlignment="Top" Checked="RoundTrip_Checked" Unchecked="RoundTrip_Unchecked"/>
+            <CheckBox x:Name="StCheck" Content="Single Trip" HorizontalAlignment="Left" Margin="120,400,0,0" VerticalAlignment="Top" Checked="SignleTrip_Checked" Unchecked="SignleTrip_Unchecked"/>
         </Grid>
         <Grid x:Name="ScheduleGridReturn" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" Visibility="Hidden" d:IsHidden="True">
             <Grid.Background>

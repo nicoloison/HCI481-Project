@@ -33,6 +33,33 @@ namespace BusApp
             TicketAmount_Update();
         }
 
+        #region CheckBox Options
+
+        private void RoundTrip_Checked(object sender, RoutedEventArgs e) 
+        {
+            StCheck.IsChecked = false;
+            TripOptionsResult.Text = "You choose round trip option.";
+            TripOptionsResult.Visibility = Visibility.Visible;
+        }
+
+        private void RoundTrip_Unchecked(object sender, RoutedEventArgs e) 
+        {
+            TripOptionsResult.Visibility = Visibility.Collapsed;
+        }
+
+        private void SignleTrip_Checked(object sender, RoutedEventArgs e)
+        {
+            RdtCheck.IsChecked = false;
+            TripOptionsResult.Text = "You choose single trip option. This option is not available right now. Please choose round trip option.";
+            TripOptionsResult.Visibility = Visibility.Visible;
+        }
+
+        private void SignleTrip_Unchecked(object sender, RoutedEventArgs e)
+        {
+            TripOptionsResult.Visibility = Visibility.Collapsed;
+        }
+        #endregion
+
         #region Map Grid Functions
         void MainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
