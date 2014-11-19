@@ -628,7 +628,7 @@
             <Button Name="Oct3rd" Content="3rd" Background="Coral" HorizontalAlignment="Left" Margin="462,230,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Click="Oct3rdClicked"/>
             <Button Name="Oct17th" Content="17th" Background="Coral" HorizontalAlignment="Left" Margin="462,366,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Click="Oct17thClicked"/>
         </Grid>
-        <Grid x:Name="ScheduleGridReturn" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" d:IsHidden="True" Visibility="Hidden">
+        <Grid x:Name="ScheduleGridReturn" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" Visibility="Hidden" d:IsHidden="True">
             <Grid.Background>
                 <ImageBrush ImageSource="Images/octcalendar.png"/>
             </Grid.Background>
@@ -640,8 +640,9 @@
             <Button x:Name="SchedulePrevReturn" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="SchedulePrevReturn_Click" Visibility="Visible" />
             <Button Name="Oct12th" Content="12th" Background="Gold" HorizontalAlignment="Left" Margin="608,298,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Click="Oct12thClicked"/>
             <Button Name="Oct26th" Content="26th" Background="Gold" HorizontalAlignment="Left" Margin="608,437,0,0" VerticalAlignment="Top" Width="72" Height="70" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="10" FontFamily="Adobe Heiti Std R" Click="Oct26thClicked"/>
+            <Button x:Name="Step4Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="364.821,575,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
         </Grid>
-        <Grid x:Name="TimeGridReturn" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" Visibility="Collapsed">
+        <Grid x:Name="TimeGridReturn" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" Visibility="Collapsed" d:IsHidden="True">
             <TextBlock x:Name="AvailableTimeReturn" Width="733.5" FontSize="24" TextAlignment="Left" TextWrapping="Wrap" FontWeight="Bold" />
             <Button x:Name="OnepmReturn" Background="Coral" Margin="82,288,681.6,302" RenderTransformOrigin="0.907,1.044" Click="OnepmReturn_button_clicked" Visibility="Collapsed" >
                 <Button.Template>
@@ -733,6 +734,7 @@
             <TextBlock x:Name="TimeChoiceReturn"  FontWeight="Bold" FontSize="20" TextAlignment="Left" TextWrapping="Wrap" FontFamily="Adobe Heiti Std R" Margin="150,388,180,50" />
             <Button x:Name="NextTimeReturn" Content="Next" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="NextTimeReturn_Click" Visibility="Collapsed" />
             <Button x:Name="PrevTimeReturn" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="PrevTimeReturn_Click" Visibility="Collapsed"/>
+            <Button x:Name="CancelTimeReturn" Content="Cancel" HorizontalAlignment="Left" Margin="364.821,575,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
         </Grid>
         <Grid x:Name="TimeGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="792" d:IsHidden="True">
             <TextBlock x:Name="AvailableTime" Width="733.5" FontSize="24" TextAlignment="Left" TextWrapping="Wrap" FontWeight="Bold" />
@@ -826,6 +828,7 @@
             <TextBlock x:Name="TimeChoice"  FontWeight="Bold" FontSize="20" TextAlignment="Left" TextWrapping="Wrap" FontFamily="Adobe Heiti Std R" Margin="150,388,180,50" />
             <Button x:Name="NextTime" Content="Next" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="NextTime_Click" Visibility="Collapsed" />
             <Button x:Name="PrevTime" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="PrevTime_Click" Visibility="Collapsed"/>
+            <Button x:Name="CancelTime" Content="Cancel" HorizontalAlignment="Left" Margin="364.821,575,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
         </Grid>
         <Grid x:Name="PaymentGrid" Background="White" d:IsHidden="True">
             <Label x:Name="StepLabel" Content="Step 5: Payment" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
@@ -860,9 +863,9 @@
             <Label x:Name="TotalLabel" Content="TOTAL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="303,298,0,0" FontSize="24" FontWeight="Bold" Foreground="White"/>
             <Label x:Name="TotalAmount" Content="$0.00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="409,298.336,0,0" FontSize="24" FontWeight="Bold" Foreground="#FFF18400" Height="41.587"/>
             <Rectangle x:Name="PaymentLabelBG" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="133.663" VerticalAlignment="Top" Width="564" Margin="114,359.673,114,0"/>
-            <TextBlock x:Name="PaymentLabel" HorizontalAlignment="Center" Margin="260.536,367.173,260.536,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" Text="How do you want to pay?" TextAlignment="Center"/>
+            <TextBlock x:Name="PaymentLabel" HorizontalAlignment="Center" Margin="114.5,367.173,119,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" Text="How do you want to pay?" TextAlignment="Center" Width="558.5"/>
             <Button x:Name="CardBtn" Content="CARD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="123" Margin="252.5,415.143,0,0" Height="63.63" FontSize="26.667" FontWeight="Bold" Foreground="#FF000099" Background="#FFC8C8EA" Click="CardBtn_Click"/>
-            <Button x:Name="CashBtn" Content="CASH" HorizontalAlignment="Left" VerticalAlignment="Top" Width="123" Margin="408,415,0,0" Height="63.63" FontSize="26.667" FontWeight="Bold" Foreground="#FF000099" Background="#FFC8C8EA"/>
+            <Button x:Name="CashBtn" Content="CASH" HorizontalAlignment="Left" VerticalAlignment="Top" Width="123" Margin="408,415,0,0" Height="63.63" FontSize="26.667" FontWeight="Bold" Foreground="#FF000099" Background="#FFC8C8EA" Click="CashBtn_Click"/>
             <Rectangle x:Name="PaymentInfoBG" Fill="#FF000004" HorizontalAlignment="Left" Height="36.163" VerticalAlignment="Top" Width="564" Margin="113.5,498.63,0,0"/>
             <TextBlock x:Name="PaymentInfoLabel" Text="Accepting Master Card, Debit Card, American Express" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="113.5,505.13,0,0" FontSize="16" Foreground="White" Width="564" Height="29.663" TextAlignment="Center"/>
             <Rectangle x:Name="TicketLabelBG_Copy" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="75.836" VerticalAlignment="Top" Width="564" Margin="114,85.5,114,0"/>
@@ -871,12 +874,23 @@
             <Rectangle x:Name="BusBG" Fill="Black" HorizontalAlignment="Left" Height="63.83" VerticalAlignment="Top" Width="77" Margin="596,90.5,0,0"/>
             <TextBlock x:Name="BusText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Margin="597,97.84,0,0" FontSize="18.667" TextAlignment="Center" Width="76"><Run Text="BUS #"/><LineBreak/><Run Text="10001"/></TextBlock>
             <Button x:Name="PaymentPrevious" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="PaymentPrevious_Click"/>
-            <Button x:Name="PaymentNext" Content="Next" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="PaymentNext_Click"/>
-            <Button x:Name="PaymentCancel" Content="Cancel" HorizontalAlignment="Center" Margin="0,574,0,0" VerticalAlignment="Top" Width="75" Click="PaymentCancel_Click"/>
-            <Grid x:Name="CreditPopupGrid" HorizontalAlignment="Center" Height="135.163" VerticalAlignment="Top" Width="565" Margin="0,358.173,0,0" Background="#FFF3A649" d:IsHidden="True">
-            	<TextBlock x:Name="CreditPopupText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Please insert, swipe, or tap your card on the credit card reader now." VerticalAlignment="Top" TextAlignment="Center" Margin="15.148,37.5,16.148,0" FontSize="24" Foreground="Black" FontWeight="Bold"/>
-            </Grid>
+            <Button x:Name="PaymentCancel" Content="Cancel" HorizontalAlignment="Center" Margin="0,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
 		</Grid>
+        <Grid x:Name="PayGrid" HorizontalAlignment="Center" Height="620" VerticalAlignment="Top" Width="792" Background="#FBFFFFFF" d:IsHidden="True">
+        	<Rectangle x:Name="PayTextBG" Fill="#FFF9B030" Margin="0,46.731,0,473.269"/>
+        	<TextBlock x:Name="PayText" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Margin="118.603,63.151,118.603,493.002" FontSize="24" Foreground="Black" FontWeight="Bold" Width="554.794"><Run Text="Please insert, swipe, or tap your card on the credit card reader now."/></TextBlock>
+        	<Rectangle x:Name="PayInfoBG" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="75.836" VerticalAlignment="Top" Width="564" Margin="118.103,219.83,109.897,0"/>
+        	<TextBlock x:Name="PayLeavingText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="118.603,227.825,0,0" FontSize="18.667" TextAlignment="Center" Width="563.5"/>
+        	<TextBlock x:Name="PayArrivingText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Arriving at Vancouver on Oct 22, 2014 at 3:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="118.603,261.825,0,0" FontSize="18.667" TextAlignment="Center" Width="554.794"/>
+        	<Rectangle x:Name="NumberTicketsBG" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="75.836" VerticalAlignment="Top" Width="564" Margin="118.103,428.78,109.897,0"/>
+        	<TextBlock x:Name="NumberTicketsText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Margin="118.603,467.793,0,0" FontSize="18.667" TextAlignment="Center" Width="554.794"><Run Text="Number of Tickets: 1 ($15 each)"/></TextBlock>
+        	<TextBlock x:Name="PleasePayText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Please pay :" VerticalAlignment="Top" Foreground="Black" FontSize="21.333" TextAlignment="Center" Width="554.794" Margin="0,354.175,0,0" FontWeight="Bold"/>
+        	<Rectangle x:Name="PayAmountBG" Fill="#FF595959" HorizontalAlignment="Center" Height="75.836" VerticalAlignment="Top" Width="316.239" Margin="240.491,384.005,235.27,0"/>
+        	<TextBlock x:Name="PayAmountText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="$ 15.00" VerticalAlignment="Top" Foreground="#FFF9B030" Margin="118.603,403.61,0,0" FontSize="29.333" TextAlignment="Center" Width="554.794" FontWeight="Bold"/>
+            <Button x:Name="PayCancel" Content="Cancel" HorizontalAlignment="Center" Margin="358.5,574,358.5,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
+        	<Button x:Name="PayPrevious" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="PayPrevious_Click"/>
+        	<Button x:Name="PayNext" Content="PAID" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="PayNext_Click"/>
+        </Grid>
 		<Grid x:Name="TicketGrid" HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="782" Background="White" d:IsHidden="True"/>
     </Grid>
 </Window>

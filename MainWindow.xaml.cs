@@ -20,8 +20,8 @@ namespace BusApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int count_click = 0;
-        private double x_mouse, y_mouse, x_depart, y_depart, x_arrive, y_arrive;
+        private int count_click = 0, ticketCount;
+        private double x_mouse, y_mouse, x_depart, y_depart, x_arrive, y_arrive, totalCost;
         public static string depDate,depTime,retDate,repTime;
         public MainWindow()
         {
@@ -38,11 +38,7 @@ namespace BusApp
         {
             if (HomeGrid.IsVisible)
             {
-                HomeGrid.Visibility = Visibility.Collapsed;
-                mapGrid.Visibility = Visibility.Visible;
-                ScheduleGrid.Visibility = Visibility.Collapsed;
-                TimeGrid.Visibility = Visibility.Collapsed;
-                PaymentGrid.Visibility = Visibility.Collapsed;
+                ShowMapGrid();
             }
         }
 
@@ -134,14 +130,16 @@ namespace BusApp
             myLine.StrokeThickness = 5;
             mapGrid.Children.Add(myLine);
             count_click = 0;
+            Next.Visibility = Visibility.Visible;
         }
 
         public void ClearLine()
         {
-            if (myLine != null && myLine.IsVisible)
+            if (myLine != null)
             {
                 myLine.Visibility = Visibility.Collapsed;
             }
+            Next.Visibility = Visibility.Collapsed;
         }
 
         public Line myLine { get; set; }
@@ -155,10 +153,6 @@ namespace BusApp
         }
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            ClearLine();
-            DepartingCityTextBox.Text = "";
-            ArrivingCityTextBox.Text = "";
-
             ShowHomeGrid();
         }
 
@@ -194,7 +188,7 @@ namespace BusApp
 
         private void NextTimeReturn_Click(object sender, RoutedEventArgs e)
         {
-            //to implement show confirmation grid
+            ShowPaymentGrid();
         }
         private void NextTime_Click(object sender, RoutedEventArgs e)
         {
@@ -213,9 +207,25 @@ namespace BusApp
             TimeGridReturn.Visibility = Visibility.Collapsed;
 
             PaymentGrid.Visibility = Visibility.Collapsed;
-            CreditPopupGrid.Visibility = Visibility.Collapsed;
+            PayGrid.Visibility = Visibility.Collapsed;
 
             TicketGrid.Visibility = Visibility.Collapsed;
+
+            ClearLine();
+            count_click = 0;
+            totalCost = 0.00;
+            depDate = depTime = retDate = repTime = "";
+            DepartingCityTextBox.Text = ArrivingCityTextBox.Text = ChosenDepDates.Text = ChosenRetDates.Text = "";
+            TimeChoice.Text = TimeChoiceReturn.Text = "";
+            TicketTextbox.Text = "1";
+            TicketAmount_Update();
+
+            Next.Visibility = Visibility.Collapsed;
+            ChosenDepDates.Visibility = Visibility.Collapsed;
+            ScheduleNext.Visibility = Visibility.Collapsed;
+            ChosenRetDates.Visibility = Visibility.Collapsed;
+            NextTimeReturn.Visibility = Visibility.Collapsed;
+            NextTime.Visibility = Visibility.Collapsed;
         }
 
         private void ShowMapGrid()
@@ -228,7 +238,7 @@ namespace BusApp
             TimeGridReturn.Visibility = Visibility.Collapsed;
 
             PaymentGrid.Visibility = Visibility.Collapsed;
-            CreditPopupGrid.Visibility = Visibility.Collapsed;
+            PayGrid.Visibility = Visibility.Collapsed;
 
             TicketGrid.Visibility = Visibility.Collapsed;
         }
@@ -243,7 +253,7 @@ namespace BusApp
             TimeGridReturn.Visibility = Visibility.Collapsed;
 
             PaymentGrid.Visibility = Visibility.Collapsed;
-            CreditPopupGrid.Visibility = Visibility.Collapsed;
+            PayGrid.Visibility = Visibility.Collapsed;
 
             TicketGrid.Visibility = Visibility.Collapsed;
 
@@ -265,13 +275,13 @@ namespace BusApp
             Elevenam.Visibility = Visibility.Visible;
 
             PaymentGrid.Visibility = Visibility.Collapsed;
-            CreditPopupGrid.Visibility = Visibility.Collapsed;
+            PayGrid.Visibility = Visibility.Collapsed;
 
             TicketGrid.Visibility = Visibility.Collapsed;
 
-            OnepmDetails.Text = "Departure at 1:00pm on October " + depDate + "and arrival at 8:00pm on October " + depDate;
-            NineamDetails.Text = "Departure at 9:00am on October " + depDate + "and arrival at 4:00pm on October " + depDate;
-            ElevenamDetails.Text = "Departure at 11:00am on October " + depDate + "and arrival at 6:00pm on October " + depDate;
+            OnepmDetails.Text = "Departing at 1:00pm";
+            NineamDetails.Text = "Departing at 9:00am";
+            ElevenamDetails.Text = "Departing at 11:00am";
 
             AvailableTime.Text = "Step 3: Choose among available departure times for October " + depDate + " from " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + " :";
 
@@ -286,12 +296,13 @@ namespace BusApp
             TimeGridReturn.Visibility = Visibility.Collapsed;
 
             PaymentGrid.Visibility = Visibility.Collapsed;
-            CreditPopupGrid.Visibility = Visibility.Collapsed;
+            PayGrid.Visibility = Visibility.Collapsed;
 
             TicketGrid.Visibility = Visibility.Collapsed;
 
             Step4Desc.Text = "Showing trips from " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + ":";
             PrevTimeReturn.Visibility = Visibility.Visible;
+            SchedulePrevReturn.Visibility = Visibility.Visible;
             AvailableDatesReturn.Text = "";
 
         }
@@ -311,15 +322,15 @@ namespace BusApp
             SchedulePrevReturn.Visibility = Visibility.Collapsed;
 
             PaymentGrid.Visibility = Visibility.Collapsed;
-            CreditPopupGrid.Visibility = Visibility.Collapsed;
+            PayGrid.Visibility = Visibility.Collapsed;
 
             TicketGrid.Visibility = Visibility.Collapsed;
 
-            OnepmDetailsReturn.Text = "Departure at 1:00pm on October " + depDate + " and arrival at 8:00pm on October " + depDate;
-            NineamDetailsReturn.Text = "Departure at 9:00am on October " + depDate + " and arrival at 4:00pm on October " + depDate;
-            ElevenamDetailsReturn.Text = "Departure at 11:00am on October " + depDate + " and arrival at 6:00pm on October " + depDate;
+            OnepmDetailsReturn.Text = "Arrival at 8:00pm";
+            NineamDetailsReturn.Text = "Arrival at 4:00pm";
+            ElevenamDetailsReturn.Text = "Arrival at 6:00pm";
 
-            AvailableTimeReturn.Text = "Step 5: Choose among available departure times for October " + depDate + " from " + ArrivingCityTextBox.Text + " to " + DepartingCityTextBox.Text + " :";
+            AvailableTimeReturn.Text = "Step 5: Choose among available arrival times for October " + retDate + " from " + ArrivingCityTextBox.Text + " to " + DepartingCityTextBox.Text + " :";
             TimeChoiceReturn.Text = "";
         }
         private void ShowPaymentGrid()
@@ -329,9 +340,59 @@ namespace BusApp
             ScheduleGrid.Visibility = Visibility.Collapsed;
             TimeGrid.Visibility = Visibility.Collapsed;
             PaymentGrid.Visibility = Visibility.Visible;
-            CreditPopupGrid.Visibility = Visibility.Collapsed;
+            PayGrid.Visibility = Visibility.Collapsed;
             TicketGrid.Visibility = Visibility.Collapsed;
+
+            LeavingLabel.Text = "Leaving " + DepartingCityTextBox.Text + " on October " + depDate + " at " + depTime + ".";
+            ArrivingLabel.Text = "Arriving at " + ArrivingCityTextBox.Text + " on October " + retDate + " at " + repTime + ".";
 		}
+        private void ShowPayGrid(String type)
+        {
+            HomeGrid.Visibility = Visibility.Collapsed;
+            mapGrid.Visibility = Visibility.Collapsed;
+            ScheduleGrid.Visibility = Visibility.Collapsed;
+            TimeGrid.Visibility = Visibility.Collapsed;
+            PaymentGrid.Visibility = Visibility.Collapsed;
+            PayGrid.Visibility = Visibility.Visible;
+            TicketGrid.Visibility = Visibility.Collapsed;
+
+            if (type == "card")
+            {
+                PayText.Text = "Please insert, swipe, or tap your card on the credit card reader now.";
+            }
+            else
+            {
+                PayText.Text = "Please insert your cash and coins now.";
+            }
+
+            ticketCount = Convert.ToInt32(TicketTextbox.Text);
+            totalCost = ticketCount * TICKET_PRICE;
+
+            PayLeavingText.Text = "Leaving " + DepartingCityTextBox.Text + " on October " + depDate + " at " + depTime + ".";
+            PayArrivingText.Text = "Arriving at " + ArrivingCityTextBox.Text + " on October " + retDate + " at " + repTime + ".";
+            PayAmountText.Text = "$ " + string.Format("{0:0.00}", totalCost);
+            NumberTicketsText.Text = "Number of Tickets: "+ ticketCount.ToString() +" ($"+TICKET_PRICE+" each)";
+        }
+        private void ShowTicketsGrid()
+        {
+            HomeGrid.Visibility = Visibility.Collapsed;
+            mapGrid.Visibility = Visibility.Collapsed;
+            ScheduleGrid.Visibility = Visibility.Collapsed;
+            ScheduleGridReturn.Visibility = Visibility.Collapsed;
+            TimeGrid.Visibility = Visibility.Collapsed;
+            TimeGridReturn.Visibility = Visibility.Collapsed;
+
+            OnepmReturn.Visibility = Visibility.Collapsed;
+            OnepmDetailsReturn.Visibility = Visibility.Collapsed;
+            ElevenamReturn.Visibility = Visibility.Collapsed;
+            NineamReturn.Visibility = Visibility.Collapsed;
+            SchedulePrevReturn.Visibility = Visibility.Collapsed;
+
+            PaymentGrid.Visibility = Visibility.Collapsed;
+            PayGrid.Visibility = Visibility.Collapsed;
+
+            TicketGrid.Visibility = Visibility.Visible;
+        }
 
         private void ClearUIElements() 
         {
@@ -341,7 +402,7 @@ namespace BusApp
             ScheduleGrid.Visibility = Visibility.Collapsed;
             TimeGrid.Visibility = Visibility.Collapsed;
             PaymentGrid.Visibility = Visibility.Visible;
-            CreditPopupGrid.Visibility = Visibility.Collapsed;
+            PayGrid.Visibility = Visibility.Collapsed;
             TicketGrid.Visibility = Visibility.Collapsed;
 
             //Buttons
@@ -390,20 +451,20 @@ namespace BusApp
         #region Time Buttons Handlers
         private void OnepmReturn_button_clicked(object sender, RoutedEventArgs e)
         {
-            depTime = "1:00 pm";
-            TimeChoiceReturn.Text = "You chose departure at " + depTime + ".\n\nClick Next to validate time.";
+            repTime = "8:00 pm";
+            TimeChoiceReturn.Text = "You chose the arrival time of " + repTime + ".\n\nClick Next to validate time.";
             NextTimeReturn.Visibility = Visibility.Visible;
         }
         private void NineamReturn_button_clicked(object sender, RoutedEventArgs e)
         {
-            depTime = "9:00 am";
-            TimeChoiceReturn.Text = "You chose departure at " + depTime + ".\n\nClick Next to validate time.";
+            repTime = "4:00 pm";
+            TimeChoiceReturn.Text = "You chose the arrival time of " + repTime + ".\n\nClick Next to validate time.";
             NextTimeReturn.Visibility = Visibility.Visible;
         }
         private void ElevenamReturn_button_clicked(object sender, RoutedEventArgs e)
         {
-            depTime = "11:00 am";
-            TimeChoiceReturn.Text = "You chose departure at " + depTime + ".\n\nClick Next to validate time.";
+            repTime = "6:00 pm";
+            TimeChoiceReturn.Text = "You chose the arrival time of " + repTime + ".\n\nClick Next to validate time.";
             NextTimeReturn.Visibility = Visibility.Visible;
         }
 
@@ -496,22 +557,26 @@ namespace BusApp
             ShowTimesGrid();
         }
 
-        private void PaymentCancel_Click(object sender, RoutedEventArgs e)
-        {
-            ShowHomeGrid();
-            TicketTextbox.Text = "1";
-            TicketAmount_Update();
-        }
-
-        private void PaymentNext_Click(object sender, RoutedEventArgs e)
-        {
-            //ShowTicketGrid();
-        }
         private void CardBtn_Click(object sender, RoutedEventArgs e)
         {
-            CreditPopupGrid.Visibility = Visibility.Visible;
+            ShowPayGrid("card");
+        }
+        private void CashBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShowPayGrid("cash");
+        }
+
+        private void PayPrevious_Click(object sender, RoutedEventArgs e)
+        {
+            ShowPaymentGrid();
+        }
+
+        private void PayNext_Click(object sender, RoutedEventArgs e)
+        {
+            ShowTicketsGrid();
         }
 
         #endregion
+
     }
 }
