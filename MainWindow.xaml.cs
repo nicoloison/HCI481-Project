@@ -35,7 +35,9 @@ namespace BusApp
         }
 
         #region CheckBox Options
-
+        //Handles the logic behind the round trip or single trip options.
+        //So far, only round trip option is deemed valid for prototyping purpuses. 
+        //Choice of trip option is dealt with on first scheduling page (way in).
         private void RoundTrip_Checked(object sender, RoutedEventArgs e) 
         {
             StCheck.IsChecked = false;
@@ -69,8 +71,9 @@ namespace BusApp
             TripOptionsResult.Visibility = Visibility.Collapsed;
         }
         #endregion
-
+        
         #region Map Grid Functions
+        //Handles UI elements appearing on map grid
         void MainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (HomeGrid.IsVisible)
@@ -184,6 +187,8 @@ namespace BusApp
         #endregion
 
         #region Next and Previous Buttons
+        //Handles conditional appearance of next buttons for each Grid and 
+        //previous button options (transistion from one grid to another)
         private void Next_Click(object sender, RoutedEventArgs e)
         {
             ShowScheduleGrid();
@@ -234,6 +239,7 @@ namespace BusApp
         #endregion
 
         #region Grid Handlers
+        //Handles UI elemet appearance for each Grid
         private void ShowHomeGrid()
         {
             HomeGrid.Visibility = Visibility.Visible;
@@ -454,6 +460,9 @@ namespace BusApp
 		#endregion
 
         #region Dates Buttons Handler
+        //Handles behavior of date options on schedule grids, 
+        //such as two dates cannot be chosen together, graying out of chosen date
+        //and updating of system memory
         private void Oct3rdButtonClicked(object sender, RoutedEventArgs e)
         {
             Oct3rd.Visibility = Visibility.Collapsed;
@@ -521,6 +530,9 @@ namespace BusApp
         #endregion
 
         #region Time Buttons Handlers
+        //Handles behavior of time options on time grid, 
+        //such as two times cannot be chosen together, graying out of chosen time
+        //and updating of system memory
         private void OnepmReturn_button_clicked(object sender, RoutedEventArgs e)
         {
             ElevenamReturnClicked.Visibility = Visibility.Collapsed;
@@ -614,7 +626,7 @@ namespace BusApp
         #endregion
 
         #region Payment Grid Functions
-
+        //Handles Payment grid and behavior of UI element
         int TICKET_MIN_AMOUNT = 1;
         int TICKET_MAX_AMOUNT = 99;
         double TICKET_PRICE = 15.00;
