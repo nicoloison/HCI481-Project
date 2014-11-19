@@ -583,7 +583,7 @@
                     </TransformGroup>
                 </Path.RenderTransform>
             </Path>
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="BUSAPP" VerticalAlignment="Top" Margin="105.5,192.4,0,0" FontSize="153.333" Foreground="White" FontFamily="Adobe Heiti Std R" RenderTransformOrigin="0.5,0.5">
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="BUSAPP" VerticalAlignment="Top" Margin="95,251,0,0" FontSize="165" Foreground="White" FontFamily="Adobe Heiti Std R" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1007,7 +1007,7 @@
             <Button x:Name="CancelTime" Content="Cancel" HorizontalAlignment="Left" Margin="364.821,575,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
         </Grid>
         <Grid x:Name="PaymentGrid" Background="White" d:IsHidden="True">
-            <Label x:Name="StepLabel" Content="Step 5: Payment" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
+            <Label x:Name="StepLabel" Content="Step 6: Payment" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
             <Rectangle x:Name="TicketLabelBG" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="111.337" VerticalAlignment="Top" Width="564" Margin="114,181.999,114,0"/>
             <TextBlock x:Name="TicketLabel" HorizontalAlignment="Left" Margin="209.246,190.576,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" Text="How many tickets do you require?" TextAlignment="Center"/>
             <Button x:Name="TicketIncBtn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="460,237.335,0,0" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="TicketIncBtn_Click">
