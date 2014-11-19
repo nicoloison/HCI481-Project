@@ -618,7 +618,7 @@
             <Grid.Background>
                 <ImageBrush ImageSource="Images/octcalendar.png"/>
             </Grid.Background>
-            <Label x:Name="Step2Label" Content="Step 2: Select a date" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
+            <Label x:Name="Step2Label" Content="Step 2: Select a date for your way out: " HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
             <TextBlock x:Name="Step2Desc" HorizontalAlignment="Left" Height="39" Margin="29,71.923,0,0" TextWrapping="Wrap" Text="Showing trips:" VerticalAlignment="Top" Width="733.5" FontSize="24"/>
             <TextBlock x:Name="AvailableDates" HorizontalAlignment="Left" Height="39" Margin="20,212,0,0" TextWrapping="Wrap" Text="Choose among available dates:" VerticalAlignment="Top" FontWeight="Bold" Width="220" FontSize="15"/>
             <TextBlock x:Name="ChosenDepDates" HorizontalAlignment="Left" Height="39" Margin="20,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="15" Visibility="Collapsed"/>
@@ -638,7 +638,7 @@
             <Grid.Background>
                 <ImageBrush ImageSource="Images/octcalendar.png"/>
             </Grid.Background>
-            <Label x:Name="Step4Label" Content="Step 4: Select a date" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" />
+            <Label x:Name="Step4Label" Content="Step 4: Select a date for your way back" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" />
             <TextBlock x:Name="Step4Desc" HorizontalAlignment="Left" Height="39" Margin="29,71.923,0,0" TextWrapping="Wrap" Text="Showing trips:" VerticalAlignment="Top" Width="733.5" FontSize="24" />
             <TextBlock x:Name="AvailableDatesReturn" HorizontalAlignment="Left" Height="39" Margin="20,212,0,0" TextWrapping="Wrap" Text="Choose among available dates:" VerticalAlignment="Top" Width="220" FontSize="15"/>
             <TextBlock x:Name="ChosenRetDates" HorizontalAlignment="Left" Height="39" Margin="20,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="15" Visibility="Collapsed"/>
