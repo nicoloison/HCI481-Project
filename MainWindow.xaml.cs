@@ -451,18 +451,45 @@ namespace BusApp
         #region Time Buttons Handlers
         private void OnepmReturn_button_clicked(object sender, RoutedEventArgs e)
         {
+            ElevenamReturnClicked.Visibility = Visibility.Collapsed;
+            ElevenamReturn.Visibility = Visibility.Visible;
+
+            NineamReturnClicked.Visibility = Visibility.Collapsed;
+            NineamReturn.Visibility = Visibility.Visible;
+
+            OnepmReturn.Visibility = Visibility.Collapsed;
+            OnepmReturnClicked.Visibility = Visibility.Visible;
+
             repTime = "8:00 pm";
             TimeChoiceReturn.Text = "You chose the arrival time of " + repTime + ".\n\nClick Next to validate time.";
             NextTimeReturn.Visibility = Visibility.Visible;
         }
         private void NineamReturn_button_clicked(object sender, RoutedEventArgs e)
         {
+            ElevenamReturnClicked.Visibility = Visibility.Collapsed;
+            ElevenamReturn.Visibility = Visibility.Visible;
+
+            NineamReturnClicked.Visibility = Visibility.Visible;
+            NineamReturn.Visibility = Visibility.Collapsed;
+
+            OnepmReturn.Visibility = Visibility.Visible;
+            OnepmReturnClicked.Visibility = Visibility.Collapsed;
+
             repTime = "4:00 pm";
             TimeChoiceReturn.Text = "You chose the arrival time of " + repTime + ".\n\nClick Next to validate time.";
             NextTimeReturn.Visibility = Visibility.Visible;
         }
         private void ElevenamReturn_button_clicked(object sender, RoutedEventArgs e)
         {
+            ElevenamReturnClicked.Visibility = Visibility.Visible;
+            ElevenamReturn.Visibility = Visibility.Collapsed;
+            
+            NineamReturnClicked.Visibility = Visibility.Collapsed;
+            NineamReturn.Visibility = Visibility.Visible;
+
+            OnepmReturn.Visibility = Visibility.Visible;
+            OnepmReturnClicked.Visibility = Visibility.Collapsed;
+            
             repTime = "6:00 pm";
             TimeChoiceReturn.Text = "You chose the arrival time of " + repTime + ".\n\nClick Next to validate time.";
             NextTimeReturn.Visibility = Visibility.Visible;
@@ -470,18 +497,43 @@ namespace BusApp
 
         private void Onepm_button_clicked(object sender, RoutedEventArgs e)
         {
+            ElevenamClicked.Visibility = Visibility.Collapsed;
+            Elevenam.Visibility = Visibility.Visible;
+
+            NineamClicked.Visibility = Visibility.Collapsed;
+            Nineam.Visibility = Visibility.Visible;
+
+            Onepm.Visibility = Visibility.Collapsed;
+            OnepmClicked.Visibility = Visibility.Visible;
+
             depTime = "1:00 pm";
             TimeChoice.Text = "You chose departure at " + depTime + ".\n\nClick Next to validate time.";
             NextTime.Visibility = Visibility.Visible;
         }
         private void Nineam_button_clicked(object sender, RoutedEventArgs e)
         {
+            ElevenamClicked.Visibility = Visibility.Collapsed;
+            Elevenam.Visibility = Visibility.Visible;
+
+            NineamClicked.Visibility = Visibility.Visible;
+            Nineam.Visibility = Visibility.Collapsed;
+
+            Onepm.Visibility = Visibility.Visible;
+            OnepmClicked.Visibility = Visibility.Collapsed;
             depTime = "9:00 am";
             TimeChoice.Text = "You chose departure at " + depTime + ".\n\nClick Next to validate time.";
             NextTime.Visibility = Visibility.Visible;
         }
         private void Elevenam_button_clicked(object sender, RoutedEventArgs e)
         {
+            ElevenamClicked.Visibility = Visibility.Visible;
+            Elevenam.Visibility = Visibility.Collapsed;
+
+            NineamClicked.Visibility = Visibility.Collapsed;
+            Nineam.Visibility = Visibility.Visible;
+
+            Onepm.Visibility = Visibility.Visible;
+            OnepmClicked.Visibility = Visibility.Collapsed;
             depTime = "11:00 am";
             TimeChoice.Text = "You chose departure at " + depTime + ".\n\nClick Next to validate time.";
             NextTime.Visibility = Visibility.Visible;

@@ -672,6 +672,34 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            <Button x:Name="OnepmReturnClicked" Background="Coral" Margin="82,288,681.6,302" RenderTransformOrigin="0.907,1.044" Click="OnepmReturn_button_clicked" Visibility="Collapsed" >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Stroke="Black"
+								StrokeThickness="2">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush>
+                                        <RadialGradientBrush.Transform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleY="0.75" />
+                                            </TransformGroup>
+                                        </RadialGradientBrush.Transform>
+                                        <GradientStop Offset="0"
+											Color="Black" />
+                                        <GradientStop Offset="1"
+											Color="Gray" />
+                                        <GradientStop Offset="1"
+											Color="Gray" />
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter HorizontalAlignment="Center"
+								VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
             <Button x:Name="NineamReturn" Background="Coral" Margin="82,88,681.6,502" RenderTransformOrigin="0.907,1.044" Click="NineamReturn_button_clicked" Visibility="Collapsed"  >
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -700,6 +728,34 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            <Button x:Name="NineamReturnClicked" Background="Coral" Margin="82,88,681.6,502" RenderTransformOrigin="0.907,1.044" Click="NineamReturn_button_clicked" Visibility="Collapsed"  >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Stroke="Black"
+								StrokeThickness="2">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush>
+                                        <RadialGradientBrush.Transform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleY="0.75" />
+                                            </TransformGroup>
+                                        </RadialGradientBrush.Transform>
+                                        <GradientStop Offset="0"
+											Color="Black" />
+                                        <GradientStop Offset="1"
+											Color="Gray" />
+                                        <GradientStop Offset="1"
+											Color="Gray" />
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter HorizontalAlignment="Center"
+								VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
             <Button x:Name="ElevenamReturn" Background="Coral" Margin="82,188,681.6,402" RenderTransformOrigin="0.907,1.044" Click="ElevenamReturn_button_clicked" Visibility="Collapsed">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -719,6 +775,34 @@
 											Color="Gold" />
                                         <GradientStop Offset="1"
 											Color="Gold" />
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter HorizontalAlignment="Center"
+								VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="ElevenamReturnClicked" Background="Coral" Margin="82,188,681.6,402" RenderTransformOrigin="0.907,1.044" Click="ElevenamReturn_button_clicked" Visibility="Collapsed">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Stroke="Black"
+								StrokeThickness="2">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush>
+                                        <RadialGradientBrush.Transform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleY="0.75" />
+                                            </TransformGroup>
+                                        </RadialGradientBrush.Transform>
+                                        <GradientStop Offset="0"
+											Color="Black" />
+                                        <GradientStop Offset="1"
+											Color="Gray" />
+                                        <GradientStop Offset="1"
+											Color="Gray" />
                                     </RadialGradientBrush>
                                 </Ellipse.Fill>
                             </Ellipse>
@@ -766,6 +850,34 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            <Button x:Name="OnepmClicked" Background="Coral" Margin="82,288,681.6,302" RenderTransformOrigin="0.907,1.044" Click="Onepm_button_clicked" Visibility="Collapsed" >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Stroke="Black"
+								StrokeThickness="2">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush>
+                                        <RadialGradientBrush.Transform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleY="0.75" />
+                                            </TransformGroup>
+                                        </RadialGradientBrush.Transform>
+                                        <GradientStop Offset="0"
+											Color="Black" />
+                                        <GradientStop Offset="1"
+											Color="Gray" />
+                                        <GradientStop Offset="1"
+											Color="Gray" />
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter HorizontalAlignment="Center"
+								VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
             <Button x:Name="Nineam" Background="Coral" Margin="82,88,681.6,502" RenderTransformOrigin="0.907,1.044" Click="Nineam_button_clicked" Visibility="Collapsed"  >
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -794,6 +906,34 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            <Button x:Name="NineamClicked" Background="Coral" Margin="82,88,681.6,502" RenderTransformOrigin="0.907,1.044" Click="Nineam_button_clicked" Visibility="Collapsed"  >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Stroke="Black"
+								StrokeThickness="2">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush>
+                                        <RadialGradientBrush.Transform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleY="0.75" />
+                                            </TransformGroup>
+                                        </RadialGradientBrush.Transform>
+                                        <GradientStop Offset="0"
+											Color="Black" />
+                                        <GradientStop Offset="1"
+											Color="Gray" />
+                                        <GradientStop Offset="1"
+											Color="Gray" />
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter HorizontalAlignment="Center"
+								VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
             <Button x:Name="Elevenam" Background="Coral" Margin="82,188,681.6,402" RenderTransformOrigin="0.907,1.044" Click="Elevenam_button_clicked" Visibility="Collapsed">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -813,6 +953,34 @@
 											Color="Coral" />
                                         <GradientStop Offset="1"
 											Color="Coral" />
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter HorizontalAlignment="Center"
+								VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="ElevenamClicked" Background="Coral" Margin="82,188,681.6,402" RenderTransformOrigin="0.907,1.044" Click="Elevenam_button_clicked" Visibility="Collapsed">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Stroke="Black"
+								StrokeThickness="2">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush>
+                                        <RadialGradientBrush.Transform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleY="0.75" />
+                                            </TransformGroup>
+                                        </RadialGradientBrush.Transform>
+                                        <GradientStop Offset="0"
+											Color="Black" />
+                                        <GradientStop Offset="1"
+											Color="Gray" />
+                                        <GradientStop Offset="1"
+											Color="Gray" />
                                     </RadialGradientBrush>
                                 </Ellipse.Fill>
                             </Ellipse>
