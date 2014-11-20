@@ -30,6 +30,7 @@ namespace BusApp
             InitializeComponent();
             this.MouseMove += new MouseEventHandler(pictureBox1_MouseUp);
             this.MouseLeftButtonDown += MainWindow_MouseLeftButtonDown;
+            this.WindowsBar.MouseDown += WindowsBar_MouseDown;
 
             ShowHomeGrid();
         }
@@ -89,10 +90,14 @@ namespace BusApp
                 ShowMapGrid();
             }
         }
+        void WindowsBar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
 
         private void City_button_clicked(Object sender, RoutedEventArgs e)
         {
-            System.Windows.Controls.Button clickedButton = (System.Windows.Controls.Button)sender;
+            Button clickedButton = (Button)sender;
 
             count_click++;
             if (count_click == 1)
@@ -320,17 +325,11 @@ namespace BusApp
 
             TicketGrid.Visibility = Visibility.Collapsed;
 
-
-            OnepmDetails.Text = "Departing from " + DepartingCityTextBox.Text + " at 1:00pm and arriving in " + ArrivingCityTextBox.Text + " at 8:00pm.";
-            NineamDetails.Text = "Departing from " + DepartingCityTextBox.Text+" at 9:00am and arriving in " +ArrivingCityTextBox.Text+" at 4:00m.";
-            ElevenamDetails.Text = "Departing from " + DepartingCityTextBox.Text + " at 11:00am and arriving in " + ArrivingCityTextBox.Text + " at 6:00pm.";
-
             OnepmDetails.Text = "Departing on October " + depDate + " at 1:00 pm\nArriving on October " + depDate + " at 8:00 pm";
             NineamDetails.Text = "Departing on October " + depDate + " at 9:00 am\nArriving on October " + depDate + " at 4:00 pm";
             ElevenamDetails.Text = "Departing on October " + depDate + " at 11:00 am\nArriving on October " + depDate + " at 6:00 pm";
 
-
-            AvailableTime.Text = "Step 3: Choose among available departure times for October " + depDate + " from " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + " :";
+            AvailableTimeSub.Text = "Showing available times for " + ArrivingCityTextBox.Text + " to " + DepartingCityTextBox.Text + " on October " + depDate + ":";
 
         }
         private void ShowScheduleGridReturn()
@@ -355,10 +354,6 @@ namespace BusApp
         }
         private void ShowTimesGridReturn()
         {
-            OnepmDetailsReturn.Text = "Departing from " + ArrivingCityTextBox.Text + " at 1:00pm and arriving in " + DepartingCityTextBox.Text + " at 8:00pm.";
-            NineamDetailsReturn.Text = "Departing from " + ArrivingCityTextBox.Text + " at 9:00am and arriving in " + DepartingCityTextBox.Text + " at 4:00m.";
-            ElevenamDetailsReturn.Text = "Departing from " + ArrivingCityTextBox.Text + " at 11:00am and arriving in " + DepartingCityTextBox.Text + " at 6:00pm.";
-
             HomeGrid.Visibility = Visibility.Collapsed;
             mapGrid.Visibility = Visibility.Collapsed;
             ScheduleGrid.Visibility = Visibility.Collapsed;
@@ -381,7 +376,7 @@ namespace BusApp
             NineamDetailsReturn.Text = "Departing on October " + retDate + " at 9:00 am\nArriving on October " + retDate + " at 4:00 pm";
             ElevenamDetailsReturn.Text = "Departing on October " + retDate + " at 11:00 am\nArriving on October " + retDate + " at 6:00 pm";
 
-            AvailableTimeReturn.Text = "Step 5: Choose among available arrival times for October " + retDate + " from " + ArrivingCityTextBox.Text + " to " + DepartingCityTextBox.Text + " :";
+            AvailableTimeReturnSub.Text = "Showing available times for " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + " on October " + retDate + ":";
             TimeChoiceReturn.Text = "";
         }
         private void ShowPaymentGrid()
@@ -443,6 +438,15 @@ namespace BusApp
             PayGrid.Visibility = Visibility.Collapsed;
 
             TicketGrid.Visibility = Visibility.Visible;
+        }
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
 		#endregion
