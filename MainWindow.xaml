@@ -1008,51 +1008,51 @@
             <Button x:Name="PrevTime" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="PrevTime_Click" Visibility="Collapsed"/>
             <Button x:Name="CancelTime" Content="Cancel" HorizontalAlignment="Center" Margin="0,575,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
         </Grid>
-        <Grid x:Name="PaymentGrid" Background="White" Height="615" Margin="0,25,0,0" d:IsHidden="True">
-            <Label x:Name="StepLabel" Content="Step 6: Payment" HorizontalAlignment="Left" Margin="29,15,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
-            <Rectangle x:Name="TicketLabelBG" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="111.337" VerticalAlignment="Top" Width="564" Margin="114,181.999,114,0"/>
-            <TextBlock x:Name="TicketLabel" HorizontalAlignment="Left" Margin="209.246,190.576,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" Text="How many tickets do you require?" TextAlignment="Center"/>
-            <Button x:Name="TicketIncBtn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="460,237.335,0,0" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="TicketIncBtn_Click">
-            	<ed:RegularPolygon x:Name="TicketIncreaseArrow" Fill="#FF000099" HorizontalAlignment="Left" Height="32.5" InnerRadius="1" PointCount="3" Stretch="Fill" VerticalAlignment="Top" Width="32.5" RenderTransformOrigin="0.5,0.5">
-            		<ed:RegularPolygon.RenderTransform>
-            			<TransformGroup>
-            				<ScaleTransform/>
-            				<SkewTransform/>
-            				<RotateTransform Angle="90"/>
-            				<TranslateTransform/>
-            			</TransformGroup>
-            		</ed:RegularPolygon.RenderTransform>
-            	</ed:RegularPolygon>
-            </Button>
-            <Button x:Name="TicketDecBtn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Foreground="{x:Null}" Background="{x:Null}" Margin="290,237.335,0,0" BorderBrush="{x:Null}" Click="TicketDecBtn_Click" Height="36.3">
-            	<ed:RegularPolygon x:Name="TicketDecreaseArrow" Fill="#FF000099" HorizontalAlignment="Left" Height="31.5" InnerRadius="1" PointCount="3" Stretch="Fill" VerticalAlignment="Top" Width="31.5" RenderTransformOrigin="0.5,0.5">
-            		<ed:RegularPolygon.RenderTransform>
-            			<TransformGroup>
-            				<ScaleTransform/>
-            				<SkewTransform/>
-            				<RotateTransform Angle="-90"/>
-            				<TranslateTransform/>
-            			</TransformGroup>
-            		</ed:RegularPolygon.RenderTransform>
-            	</ed:RegularPolygon>
-            </Button>
-            <TextBox x:Name="TicketTextbox" HorizontalAlignment="Center" Height="38.336" Margin="353.25,237.499,353.25,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="85.5" BorderBrush="#FF9191E6" FontSize="26.667" TextAlignment="Center" KeyUp="TicketAmountTextBox_KeyUp"/>
-            <Rectangle x:Name="TotalBG" Fill="#FF000004" HorizontalAlignment="Left" Height="41.587" VerticalAlignment="Top" Width="564" Margin="114.5,298.336,0,0"/>
-            <Label x:Name="TotalLabel" Content="TOTAL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="303,298,0,0" FontSize="24" FontWeight="Bold" Foreground="White"/>
-            <Label x:Name="TotalAmount" Content="$0.00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="409,298.336,0,0" FontSize="24" FontWeight="Bold" Foreground="#FFF18400" Height="41.587"/>
-            <Rectangle x:Name="PaymentLabelBG" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="133.663" VerticalAlignment="Top" Width="564" Margin="114,359.673,114,0"/>
-            <TextBlock x:Name="PaymentLabel" HorizontalAlignment="Center" Margin="114.5,367.173,119,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" Text="How do you want to pay?" TextAlignment="Center" Width="558.5"/>
-            <Button x:Name="CardBtn" Content="CARD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="123" Margin="252.5,415.143,0,0" Height="63.63" FontSize="26.667" FontWeight="Bold" Foreground="#FF000099" Background="#FFC8C8EA" Click="CardBtn_Click"/>
-            <Button x:Name="CashBtn" Content="CASH" HorizontalAlignment="Left" VerticalAlignment="Top" Width="123" Margin="408,415,0,0" Height="63.63" FontSize="26.667" FontWeight="Bold" Foreground="#FF000099" Background="#FFC8C8EA" Click="CashBtn_Click"/>
-            <Rectangle x:Name="PaymentInfoBG" Fill="#FF000004" HorizontalAlignment="Left" Height="36.163" VerticalAlignment="Top" Width="564" Margin="113.5,498.63,0,0"/>
-            <TextBlock x:Name="PaymentInfoLabel" Text="Accepting Master Card, Debit Card, American Express" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="113.5,505.13,0,0" FontSize="16" Foreground="White" Width="564" Height="29.663" TextAlignment="Center"/>
-            <Rectangle x:Name="TicketLabelBG_Copy" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="75.836" VerticalAlignment="Top" Width="564" Margin="114,85.5,114,0"/>
-            <TextBlock x:Name="LeavingLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="114.5,93.5,0,0" FontSize="18.667" TextAlignment="Right" Width="468.5"/>
-            <TextBlock x:Name="ArrivingLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Arriving at Vancouver on Oct 22, 2014 at 3:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="114.5,127.5,0,0" FontSize="18.667" TextAlignment="Right" Width="468.5"/>
-            <Rectangle x:Name="BusBG" Fill="Black" HorizontalAlignment="Left" Height="63.83" VerticalAlignment="Top" Width="77" Margin="596,90.5,0,0"/>
-            <TextBlock x:Name="BusText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Margin="597,97.84,0,0" FontSize="18.667" TextAlignment="Center" Width="76"><Run Text="BUS #"/><LineBreak/><Run Text="10001"/></TextBlock>
-            <Button x:Name="PaymentPrevious" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="PaymentPrevious_Click"/>
-            <Button x:Name="PaymentCancel" Content="Cancel" HorizontalAlignment="Center" Margin="0,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
+		<Grid x:Name="PaymentGrid" Background="White" Height="615" Margin="0,25,0,0">
+			<Label x:Name="PaymentStepTitle" Content="Step 6: Payment" HorizontalAlignment="Left" Margin="29,15,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
+			<Rectangle x:Name="TicketLabelBG" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="111.337" VerticalAlignment="Top" Width="706" Margin="39,181.999,47,0"/>
+			<TextBlock x:Name="TicketLabel" HorizontalAlignment="Left" Margin="209.246,190.576,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" Text="How many tickets do you require?" TextAlignment="Center"/>
+			<Button x:Name="TicketIncBtn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="460,237.335,0,0" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="TicketIncBtn_Click" BorderThickness="0">
+				<ed:RegularPolygon x:Name="TicketIncreaseArrow" Fill="#FF000099" HorizontalAlignment="Left" Height="32.5" InnerRadius="1" PointCount="3" Stretch="Fill" VerticalAlignment="Top" Width="32.5" RenderTransformOrigin="0.5,0.5">
+					<ed:RegularPolygon.RenderTransform>
+						<TransformGroup>
+							<ScaleTransform/>
+							<SkewTransform/>
+							<RotateTransform Angle="90"/>
+							<TranslateTransform/>
+						</TransformGroup>
+					</ed:RegularPolygon.RenderTransform>
+				</ed:RegularPolygon>
+			</Button>
+			<Button x:Name="TicketDecBtn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Foreground="{x:Null}" Background="{x:Null}" Margin="290,237.335,0,0" BorderBrush="{x:Null}" Click="TicketDecBtn_Click" Height="36.3" BorderThickness="0">
+				<ed:RegularPolygon x:Name="TicketDecreaseArrow" Fill="#FF000099" HorizontalAlignment="Left" Height="31.5" InnerRadius="1" PointCount="3" Stretch="Fill" VerticalAlignment="Top" Width="31.5" RenderTransformOrigin="0.5,0.5">
+					<ed:RegularPolygon.RenderTransform>
+						<TransformGroup>
+							<ScaleTransform/>
+							<SkewTransform/>
+							<RotateTransform Angle="-90"/>
+							<TranslateTransform/>
+						</TransformGroup>
+					</ed:RegularPolygon.RenderTransform>
+				</ed:RegularPolygon>
+			</Button>
+			<TextBox x:Name="TicketTextbox" HorizontalAlignment="Center" Height="38.336" Margin="353.25,237.499,353.25,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="85.5" BorderBrush="#FF9191E6" FontSize="26.667" TextAlignment="Center" KeyUp="TicketAmountTextBox_KeyUp"/>
+			<Rectangle x:Name="TotalBG" Fill="#FF000004" HorizontalAlignment="Left" Height="41.587" VerticalAlignment="Top" Width="706" Margin="39,298.336,0,0"/>
+			<Label x:Name="TotalLabel" Content="TOTAL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="303,298,0,0" FontSize="24" FontWeight="Bold" Foreground="White"/>
+			<Label x:Name="TotalAmount" Content="$0.00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="409,298.336,0,0" FontSize="24" FontWeight="Bold" Foreground="#FFF18400" Height="41.587"/>
+			<Rectangle x:Name="PaymentLabelBG" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="133.663" VerticalAlignment="Top" Width="706" Margin="39,359.673,47,0"/>
+			<TextBlock x:Name="PaymentLabel" HorizontalAlignment="Center" Margin="114.5,367.173,119,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" Text="How do you want to pay?" TextAlignment="Center" Width="558.5"/>
+			<Button x:Name="CardBtn1" Content="CARD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="123" Margin="252.5,415.143,0,0" Height="63.63" FontSize="26.667" FontWeight="Bold" Foreground="#FF000099" Background="#FFC8C8EA" Click="CardBtn_Click"/>
+			<Button x:Name="CashBtn1" Content="CASH" HorizontalAlignment="Left" VerticalAlignment="Top" Width="123" Margin="408,415,0,0" Height="63.63" FontSize="26.667" FontWeight="Bold" Foreground="#FF000099" Background="#FFC8C8EA" Click="CashBtn_Click"/>
+			<Rectangle x:Name="PaymentInfoBG" Fill="#FF000004" HorizontalAlignment="Left" Height="36.163" VerticalAlignment="Top" Width="706" Margin="39,498.63,0,0"/>
+			<TextBlock x:Name="PaymentInfoLabel" Text="Accepting Master Card, Debit Card, American Express" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="113.5,505.13,0,0" FontSize="16" Foreground="White" Width="564" Height="29.663" TextAlignment="Center"/>
+			<Rectangle x:Name="TicketLabelBG_Copy" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="75.836" VerticalAlignment="Top" Width="706" Margin="39,85.5,47,0"/>
+			<TextBlock x:Name="LeavingLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="39,95.5,0,0" FontSize="18.667" TextAlignment="Center" Width="706" d:IsHidden="True"/>
+			<TextBlock x:Name="ArrivingLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Arriving at Vancouver on Oct 22, 2014 at 3:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="39,129.5,0,0" FontSize="18.667" TextAlignment="Center" Width="706" d:IsHidden="True"/>
+			<Button x:Name="PaymentPrevious" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="PaymentPrevious_Click"/>
+			<Button x:Name="PaymentCancel" Content="Cancel" HorizontalAlignment="Center" Margin="0,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
+			<TextBlock x:Name="DepartureTrip" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Margin="39,89.5,0,0" FontSize="16" TextAlignment="Center" Width="352.443" Height="68"><Run Text="Departure Trip:"/><LineBreak/><Run Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM."/><LineBreak/><Run Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM."/><LineBreak/><Run/></TextBlock>
+			<TextBlock x:Name="ReturnTrip" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Margin="409,89.5,0,0" FontSize="16" Width="336" Height="68" TextAlignment="Center"><Run Text="Departure Trip:"/><LineBreak/><Run Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM."/><LineBreak/><Run Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM."/><LineBreak/><Run/><LineBreak/><Run Text=""/></TextBlock>
 		</Grid>
         <Grid x:Name="PayGrid" HorizontalAlignment="Center" Height="615" VerticalAlignment="Top" Width="792" Background="White" d:IsHidden="True" Margin="0,25,0,0">
         	<Rectangle x:Name="PayTextBG" Fill="#FFF9B030" Margin="0,46.731,0,473.269"/>

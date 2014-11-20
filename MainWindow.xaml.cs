@@ -23,7 +23,7 @@ namespace BusApp
         private int count_click = 0, ticketCount;
         private double x_mouse, y_mouse, x_depart, y_depart, x_arrive, y_arrive, totalCost;
         public static string depDate,depTime,depTimeArrival,retDate,repTime,repTimeArrival;
-        public bool optchecked=false, datechecked=false; 
+        public bool optchecked=false, datechecked=false, roundTrip=false; 
         
         public MainWindow()
         {
@@ -45,6 +45,7 @@ namespace BusApp
             TripOptionsResult.Text = "You choose round trip option.";
             TripOptionsResult.Visibility = Visibility.Visible;
             optchecked = true;
+            roundTrip = true;
             if (optchecked== true && datechecked==true)
             {
                 ScheduleNext.Visibility = Visibility.Visible;
@@ -55,21 +56,29 @@ namespace BusApp
         {
             TripOptionsResult.Visibility = Visibility.Collapsed;
             optchecked = false;
+            roundTrip = false;
             ScheduleNext.Visibility = Visibility.Collapsed;
         }
 
         private void SignleTrip_Checked(object sender, RoutedEventArgs e)
         {
             RdtCheck.IsChecked = false;
-            TripOptionsResult.Text = "You choose single trip option. This option is not available right now. Please choose round trip option.";
+            roundTrip = false;
+            TripOptionsResult.Text = "You choose single trip option.";
             TripOptionsResult.Visibility = Visibility.Visible;
             ScheduleNext.Visibility = Visibility.Collapsed;
-            optchecked = false;
+            optchecked = true;
+            if (optchecked == true && datechecked == true)
+            {
+                ScheduleNext.Visibility = Visibility.Visible;
+            }
         }
 
         private void SignleTrip_Unchecked(object sender, RoutedEventArgs e)
         {
+            optchecked = false;
             TripOptionsResult.Visibility = Visibility.Collapsed;
+            ScheduleNext.Visibility = Visibility.Collapsed;
         }
 
         private void ResetCheckboxOptions()
@@ -77,6 +86,7 @@ namespace BusApp
             RdtCheck.IsChecked = false;
             StCheck.IsChecked = false;
             optchecked = false;
+            roundTrip = false;
             TripOptionsResult.Visibility = Visibility.Collapsed;
         }
         #endregion
@@ -256,7 +266,14 @@ namespace BusApp
         }
         private void NextTime_Click(object sender, RoutedEventArgs e)
         {
-            ShowScheduleGridReturn();
+            if (roundTrip)
+            {
+                ShowScheduleGridReturn();
+            }
+            else
+            {
+                ShowPaymentGrid();
+            }
         }
         #endregion
 
@@ -389,8 +406,26 @@ namespace BusApp
             PayGrid.Visibility = Visibility.Collapsed;
             TicketGrid.Visibility = Visibility.Collapsed;
 
-            LeavingLabel.Text = "Leaving " + DepartingCityTextBox.Text + " on October " + depDate + " at " + depTime + ".";
-            ArrivingLabel.Text = "Arriving at " + ArrivingCityTextBox.Text + " on October " + retDate + " at " + repTime + ".";
+            if (roundTrip)
+            {
+                PaymentStepTitle.Content = "Step 6: Payment";
+
+                LeavingLabel.Text = "";
+                ArrivingLabel.Text = "";
+
+                DepartureTrip.Text = "Departure Trip:\nLeaving " + DepartingCityTextBox.Text + " on Oct. " + depDate + " at " + depTime + "\nArriving at " + ArrivingCityTextBox.Text + " on Oct. " + depDate + " at " + depTimeArrival + ".";
+                ReturnTrip.Text = "Return Trip:\nArriving " + ArrivingCityTextBox.Text + " on Oct. " + retDate + " at " + repTime + "\nArriving at " + DepartingCityTextBox.Text + " on Oct. " + retDate + " at " + repTimeArrival + ".";
+            }
+            else
+            {
+                PaymentStepTitle.Content = "Step 4: Payment";
+
+                LeavingLabel.Text = "Leaving " + DepartingCityTextBox.Text + " on October " + depDate + " at " + depTime + ".";
+                ArrivingLabel.Text = "Arriving at " + ArrivingCityTextBox.Text + " on October " + depDate + " at " + depTimeArrival + ".";
+
+                DepartureTrip.Text = "";
+                ReturnTrip.Text = "";
+            }
 		}
         private void ShowPayGrid(String type)
         {
@@ -759,7 +794,14 @@ namespace BusApp
         }
         private void PaymentPrevious_Click(object sender, RoutedEventArgs e)
         {
-            ShowTimesGridReturn();
+            if (roundTrip)
+            {
+                ShowTimesGridReturn();
+            }
+            else
+            {
+                ShowTimesGrid();
+            }
         }
 
         private void CardBtn_Click(object sender, RoutedEventArgs e)
