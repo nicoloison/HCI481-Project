@@ -1011,7 +1011,7 @@
 		<Grid x:Name="PaymentGrid" Background="White" Height="615" Margin="0,25,0,0">
 			<Label x:Name="PaymentStepTitle" Content="Step 6: Payment" HorizontalAlignment="Left" Margin="29,15,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
 			<Rectangle x:Name="TicketLabelBG" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="111.337" VerticalAlignment="Top" Width="706" Margin="39,181.999,47,0"/>
-			<TextBlock x:Name="TicketLabel" HorizontalAlignment="Left" Margin="209.246,190.576,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" Text="How many tickets do you require?" TextAlignment="Center"/>
+			<TextBlock x:Name="TicketLabel" HorizontalAlignment="Left" Margin="39,190.576,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="24" Text="How many tickets do you require?" TextAlignment="Center" Width="706"/>
 			<Button x:Name="TicketIncBtn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="460,237.335,0,0" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="TicketIncBtn_Click" BorderThickness="0">
 				<ed:RegularPolygon x:Name="TicketIncreaseArrow" Fill="#FF000099" HorizontalAlignment="Left" Height="32.5" InnerRadius="1" PointCount="3" Stretch="Fill" VerticalAlignment="Top" Width="32.5" RenderTransformOrigin="0.5,0.5">
 					<ed:RegularPolygon.RenderTransform>
@@ -1036,7 +1036,7 @@
 					</ed:RegularPolygon.RenderTransform>
 				</ed:RegularPolygon>
 			</Button>
-			<TextBox x:Name="TicketTextbox" HorizontalAlignment="Center" Height="38.336" Margin="353.25,237.499,353.25,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="85.5" BorderBrush="#FF9191E6" FontSize="26.667" TextAlignment="Center" KeyUp="TicketAmountTextBox_KeyUp"/>
+			<TextBox x:Name="TicketTextbox" HorizontalAlignment="Center" Height="38.336" Margin="0,237.499,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="85.5" BorderBrush="#FF9191E6" FontSize="26.667" TextAlignment="Center" KeyUp="TicketAmountTextBox_KeyUp"/>
 			<Rectangle x:Name="TotalBG" Fill="#FF000004" HorizontalAlignment="Left" Height="41.587" VerticalAlignment="Top" Width="706" Margin="39,298.336,0,0"/>
 			<Label x:Name="TotalLabel" Content="TOTAL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="303,298,0,0" FontSize="24" FontWeight="Bold" Foreground="White"/>
 			<Label x:Name="TotalAmount" Content="$0.00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="409,298.336,0,0" FontSize="24" FontWeight="Bold" Foreground="#FFF18400" Height="41.587"/>
@@ -1054,12 +1054,14 @@
 			<TextBlock x:Name="DepartureTrip" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Margin="39,89.5,0,0" FontSize="16" TextAlignment="Center" Width="352.443" Height="68"><Run Text="Departure Trip:"/><LineBreak/><Run Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM."/><LineBreak/><Run Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM."/><LineBreak/><Run/></TextBlock>
 			<TextBlock x:Name="ReturnTrip" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Margin="409,89.5,0,0" FontSize="16" Width="336" Height="68" TextAlignment="Center"><Run Text="Departure Trip:"/><LineBreak/><Run Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM."/><LineBreak/><Run Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM."/><LineBreak/><Run/><LineBreak/><Run Text=""/></TextBlock>
 		</Grid>
-        <Grid x:Name="PayGrid" HorizontalAlignment="Center" Height="615" VerticalAlignment="Top" Width="792" Background="White" d:IsHidden="True" Margin="0,25,0,0">
+        <Grid x:Name="PayGrid" HorizontalAlignment="Center" Height="615" VerticalAlignment="Top" Width="792" Background="White" Margin="0,25,0,0" d:IsHidden="True">
         	<Rectangle x:Name="PayTextBG" Fill="#FFF9B030" Margin="0,46.731,0,473.269"/>
         	<TextBlock x:Name="PayText" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Margin="118.603,63.151,118.603,493.002" FontSize="24" Foreground="Black" FontWeight="Bold" Width="554.794"><Run Text="Please insert, swipe, or tap your card on the credit card reader now."/></TextBlock>
-        	<Rectangle x:Name="PayInfoBG" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="75.836" VerticalAlignment="Top" Width="564" Margin="118.103,219.83,109.897,0"/>
-        	<TextBlock x:Name="PayLeavingText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="118.603,227.825,0,0" FontSize="18.667" TextAlignment="Center" Width="563.5"/>
-        	<TextBlock x:Name="PayArrivingText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Arriving at Vancouver on Oct 22, 2014 at 3:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="118.603,261.825,0,0" FontSize="18.667" TextAlignment="Center" Width="554.794"/>
+        	<Grid x:Name="PayOneWayTrip" Margin="118.103,219.83,109.897,319.334">
+        		<Rectangle x:Name="PayInfoBG" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="75.836" VerticalAlignment="Top" Width="564"/>
+        		<TextBlock x:Name="PayLeavingText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="0.5,7.995,0,0" FontSize="18.667" TextAlignment="Center" Width="563.5"/>
+        		<TextBlock x:Name="PayArrivingText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Arriving at Vancouver on Oct 22, 2014 at 3:30 PM." VerticalAlignment="Top" Foreground="Black" Margin="0.5,41.995,0,0" FontSize="18.667" TextAlignment="Center" Width="554.794"/>
+        	</Grid>
         	<Rectangle x:Name="NumberTicketsBG" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="75.836" VerticalAlignment="Top" Width="564" Margin="118.103,428.78,109.897,0"/>
         	<TextBlock x:Name="NumberTicketsText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Margin="118.603,467.793,0,0" FontSize="18.667" TextAlignment="Center" Width="554.794"><Run Text="Number of Tickets: 1 ($15 each)"/></TextBlock>
         	<TextBlock x:Name="PleasePayText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Please pay :" VerticalAlignment="Top" Foreground="Black" FontSize="21.333" TextAlignment="Center" Width="554.794" Margin="0,354.175,0,0" FontWeight="Bold"/>
@@ -1068,6 +1070,11 @@
             <Button x:Name="PayCancel" Content="Cancel" HorizontalAlignment="Center" Margin="358.5,574,358.5,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
         	<Button x:Name="PayPrevious" Content="Previous" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="PayPrevious_Click"/>
         	<Button x:Name="PayNext" Content="PAID" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="PayNext_Click"/>
+        	<Grid x:Name="PayRoundTrip" Margin="45,219.83,45,319.334" d:IsHidden="True">
+        		<Rectangle x:Name="RoundTripBG" Fill="#FFE4E4E4" HorizontalAlignment="Center" Height="75.836" VerticalAlignment="Top" Width="706" Margin="-2.052,-2,-2.051,0"/>
+        		<TextBlock x:Name="PayDepartureTrip" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Margin="0,3,0,0" FontSize="16" TextAlignment="Center" Width="352.443" Height="68"><Run Text="Departure Trip:"/><LineBreak/><Run Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM."/><LineBreak/><Run Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM."/><LineBreak/><Run/></TextBlock>
+        		<TextBlock x:Name="PayReturnTrip" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Margin="0,3,0,0" FontSize="16" Width="336" Height="68" TextAlignment="Center"><Run Text="Departure Trip:"/><LineBreak/><Run Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM."/><LineBreak/><Run Text="Leaving Calgary on Oct 21, 2014 at 8:30 PM."/><LineBreak/><Run/><LineBreak/><Run Text=""/></TextBlock>
+        	</Grid>
         </Grid>
 		<Grid x:Name="TicketGrid" HorizontalAlignment="Left" Height="615" VerticalAlignment="Top" Width="782" Background="White" d:IsHidden="True" Margin="0,25,0,0"/>
 		<Grid x:Name="WindowsBar" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="792">

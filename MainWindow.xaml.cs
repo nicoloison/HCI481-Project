@@ -409,6 +409,7 @@ namespace BusApp
             if (roundTrip)
             {
                 PaymentStepTitle.Content = "Step 6: Payment";
+                TicketLabel.Text = "How many tickets do you require? ($" + TICKET_PRICE_RNDTRP + " each)";
 
                 LeavingLabel.Text = "";
                 ArrivingLabel.Text = "";
@@ -419,6 +420,7 @@ namespace BusApp
             else
             {
                 PaymentStepTitle.Content = "Step 4: Payment";
+                TicketLabel.Text = "How many tickets do you require? ($" + TICKET_PRICE + " each)";
 
                 LeavingLabel.Text = "Leaving " + DepartingCityTextBox.Text + " on October " + depDate + " at " + depTime + ".";
                 ArrivingLabel.Text = "Arriving at " + ArrivingCityTextBox.Text + " on October " + depDate + " at " + depTimeArrival + ".";
@@ -426,6 +428,8 @@ namespace BusApp
                 DepartureTrip.Text = "";
                 ReturnTrip.Text = "";
             }
+
+            TicketAmount_Update();
 		}
         private void ShowPayGrid(String type)
         {
@@ -447,12 +451,35 @@ namespace BusApp
             }
 
             ticketCount = Convert.ToInt32(TicketTextbox.Text);
-            totalCost = ticketCount * TICKET_PRICE;
 
-            PayLeavingText.Text = "Leaving " + DepartingCityTextBox.Text + " on October " + depDate + " at " + depTime + ".";
-            PayArrivingText.Text = "Arriving at " + ArrivingCityTextBox.Text + " on October " + retDate + " at " + repTime + ".";
+            if (roundTrip)
+            {
+                totalCost = ticketCount * TICKET_PRICE_RNDTRP;
+                NumberTicketsText.Text = "Number of Tickets: " + ticketCount.ToString() + " ($" + TICKET_PRICE_RNDTRP + " each)";
+
+                PayOneWayTrip.Visibility = Visibility.Collapsed;
+                PayLeavingText.Text = "";
+                PayLeavingText.Text = "";
+
+                PayRoundTrip.Visibility = Visibility.Visible;
+                PayDepartureTrip.Text = "Departure Trip:\nLeaving " + DepartingCityTextBox.Text + " on Oct. " + depDate + " at " + depTime + "\nArriving at " + ArrivingCityTextBox.Text + " on Oct. " + depDate + " at " + depTimeArrival + ".";
+                PayReturnTrip.Text = "Return Trip:\nArriving " + ArrivingCityTextBox.Text + " on Oct. " + retDate + " at " + repTime + "\nArriving at " + DepartingCityTextBox.Text + " on Oct. " + retDate + " at " + repTimeArrival + ".";
+            }
+            else
+            {
+                totalCost = ticketCount * TICKET_PRICE;
+                NumberTicketsText.Text = "Number of Tickets: " + ticketCount.ToString() + " ($" + TICKET_PRICE + " each)";
+                
+                PayOneWayTrip.Visibility = Visibility.Visible;
+                PayLeavingText.Text = "Leaving " + DepartingCityTextBox.Text + " on October " + depDate + " at " + depTime + ".";
+                PayArrivingText.Text = "Arriving at " + ArrivingCityTextBox.Text + " on October " + depDate + " at " + depTimeArrival + ".";
+                
+                PayRoundTrip.Visibility = Visibility.Collapsed;
+                DepartureTrip.Text = "";
+                ReturnTrip.Text = "";
+            }
+
             PayAmountText.Text = "$ " + string.Format("{0:0.00}", totalCost);
-            NumberTicketsText.Text = "Number of Tickets: "+ ticketCount.ToString() +" ($"+TICKET_PRICE+" each)";
         }
         private void ShowTicketsGrid()
         {
@@ -734,6 +761,7 @@ namespace BusApp
         int TICKET_MIN_AMOUNT = 1;
         int TICKET_MAX_AMOUNT = 99;
         double TICKET_PRICE = 15.00;
+        double TICKET_PRICE_RNDTRP = 25.00;
         private void TicketDecBtn_Click(object sender, RoutedEventArgs e)
         {
             int ticketAmount = Convert.ToInt32(TicketTextbox.Text);
@@ -758,7 +786,16 @@ namespace BusApp
         private void TicketAmount_Update()
         {
             int ticketAmount = Convert.ToInt32(TicketTextbox.Text);
-            double newTotal = TICKET_PRICE * ticketAmount;
+
+            double newTotal = TICKET_PRICE;
+            if (roundTrip)
+            {
+                newTotal = TICKET_PRICE_RNDTRP * ticketAmount;
+            }
+            else
+            {
+                newTotal = TICKET_PRICE * ticketAmount;
+            }
             TotalAmount.Content = "$"+ string.Format("{0:0.00}", newTotal);
 
             if (ticketAmount == TICKET_MIN_AMOUNT)
