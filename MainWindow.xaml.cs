@@ -320,15 +320,15 @@ namespace BusApp
 
             TicketGrid.Visibility = Visibility.Collapsed;
 
-<<<<<<< HEAD
+
             OnepmDetails.Text = "Departing from " + DepartingCityTextBox.Text + " at 1:00pm and arriving in " + ArrivingCityTextBox.Text + " at 8:00pm.";
             NineamDetails.Text = "Departing from " + DepartingCityTextBox.Text+" at 9:00am and arriving in " +ArrivingCityTextBox.Text+" at 4:00m.";
             ElevenamDetails.Text = "Departing from " + DepartingCityTextBox.Text + " at 11:00am and arriving in " + ArrivingCityTextBox.Text + " at 6:00pm.";
-=======
+
             OnepmDetails.Text = "Departing on October " + depDate + " at 1:00 pm\nArriving on October " + depDate + " at 8:00 pm";
             NineamDetails.Text = "Departing on October " + depDate + " at 9:00 am\nArriving on October " + depDate + " at 4:00 pm";
             ElevenamDetails.Text = "Departing on October " + depDate + " at 11:00 am\nArriving on October " + depDate + " at 6:00 pm";
->>>>>>> a1c391a980d4b1d111ea86ee7ada280aa82951c0
+
 
             AvailableTime.Text = "Step 3: Choose among available departure times for October " + depDate + " from " + DepartingCityTextBox.Text + " to " + ArrivingCityTextBox.Text + " :";
 
@@ -376,15 +376,11 @@ namespace BusApp
             PayGrid.Visibility = Visibility.Collapsed;
 
             TicketGrid.Visibility = Visibility.Collapsed;
-<<<<<<< HEAD
-           
-=======
 
             OnepmDetailsReturn.Text = "Departing on October " + retDate + " at 1:00 pm\nArriving on October " + retDate + " at 8:00 pm";
             NineamDetailsReturn.Text = "Departing on October " + retDate + " at 9:00 am\nArriving on October " + retDate + " at 4:00 pm";
             ElevenamDetailsReturn.Text = "Departing on October " + retDate + " at 11:00 am\nArriving on October " + retDate + " at 6:00 pm";
 
->>>>>>> a1c391a980d4b1d111ea86ee7ada280aa82951c0
             AvailableTimeReturn.Text = "Step 5: Choose among available arrival times for October " + retDate + " from " + ArrivingCityTextBox.Text + " to " + DepartingCityTextBox.Text + " :";
             TimeChoiceReturn.Text = "";
         }
@@ -483,11 +479,7 @@ namespace BusApp
 
             depDate = Oct17th.Content.ToString();
             ChosenDepDates.Visibility = Visibility.Visible;
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> a1c391a980d4b1d111ea86ee7ada280aa82951c0
             datechecked = true;
             if (optchecked == true && datechecked == true)
             {
@@ -569,12 +561,12 @@ namespace BusApp
             OnepmReturnClicked.Visibility = Visibility.Visible;
 
             repTime = "1:00 pm";
-<<<<<<< HEAD
+
             TimeChoiceReturn.Text = "You chose the departure time of " + repTime + ".\n\nClick Next to validate time.";
-=======
+
             repTimeArrival = "8:00 pm";
             TimeChoiceReturn.Text = "You chose the departure of " + repTime + " and arrival of " + repTimeArrival + ".\n\nClick Next to validate time.";
->>>>>>> a1c391a980d4b1d111ea86ee7ada280aa82951c0
+
             NextTimeReturn.Visibility = Visibility.Visible;
         }
         private void NineamReturn_button_clicked(object sender, RoutedEventArgs e)
@@ -589,12 +581,12 @@ namespace BusApp
             OnepmReturnClicked.Visibility = Visibility.Collapsed;
 
             repTime = "9:00 am";
-<<<<<<< HEAD
+//<<<<<<< HEAD
             TimeChoiceReturn.Text = "You chose the departure time of " + repTime + ".\n\nClick Next to validate time.";
-=======
+//=======
             repTimeArrival = "4:00 pm";
             TimeChoiceReturn.Text = "You chose the departure of " + repTime + " and arrival of " + repTimeArrival + ".\n\nClick Next to validate time.";
->>>>>>> a1c391a980d4b1d111ea86ee7ada280aa82951c0
+//>>>>>>> a1c391a980d4b1d111ea86ee7ada280aa82951c0
             NextTimeReturn.Visibility = Visibility.Visible;
         }
         private void ElevenamReturn_button_clicked(object sender, RoutedEventArgs e)
@@ -607,16 +599,13 @@ namespace BusApp
 
             OnepmReturn.Visibility = Visibility.Visible;
             OnepmReturnClicked.Visibility = Visibility.Collapsed;
-<<<<<<< HEAD
-            
+
             repTime = "11:00 am";
             TimeChoiceReturn.Text = "You chose the departure time of " + repTime + ".\n\nClick Next to validate time.";
-=======
-
             repTime = "11:00 am";
             repTimeArrival = "6:00 pm";
             TimeChoiceReturn.Text = "You chose the departure of " + repTime + " and arrival of " + repTimeArrival + ".\n\nClick Next to validate time.";
->>>>>>> a1c391a980d4b1d111ea86ee7ada280aa82951c0
+
             NextTimeReturn.Visibility = Visibility.Visible;
         }
 
