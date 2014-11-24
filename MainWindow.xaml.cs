@@ -146,6 +146,26 @@ namespace BusApp
                 DrawWay();
                 ArrivingCityTextBox.Text = clickedButton.Name;
             }
+            if (ArrivingCityTextBox.Text == DepartingCityTextBox.Text)
+            {
+                if (count_click == 1)
+                {
+                    LeavingFromError.Visibility = Visibility.Visible;
+                    LeavingFromError.ToolTip = "Leaving from and going to cities are the same. Please specify two different cities.";
+                }
+                else
+                {
+                    GoingToError.Visibility = Visibility.Visible;
+                    GoingToError.ToolTip = "Leaving from and going to cities are the same. Please specify two different cities.";
+                }
+                Next.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                LeavingFromError.Visibility = Visibility.Collapsed;
+                GoingToError.Visibility = Visibility.Collapsed;
+                Next.Visibility = Visibility.Visible;
+            }
          }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
@@ -169,6 +189,18 @@ namespace BusApp
                 {
                     DrawWay();
                 }
+                if (ArrivingCityTextBox.Text == DepartingCityTextBox.Text)
+                {
+                    LeavingFromError.Visibility = Visibility.Visible;
+                    LeavingFromError.ToolTip = "Leaving from and going to cities are the same. Please specify two different cities.";
+                    Next.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    LeavingFromError.Visibility = Visibility.Collapsed;
+                    GoingToError.Visibility = Visibility.Collapsed;
+                    Next.Visibility = Visibility.Visible;
+                }
             }
         }
 
@@ -183,6 +215,18 @@ namespace BusApp
                 x_arrive = point.X + 10;
                 y_arrive = point.Y + 10;
                 DrawWay();
+                if (ArrivingCityTextBox.Text == DepartingCityTextBox.Text)
+                {
+                    GoingToError.Visibility = Visibility.Visible;
+                    GoingToError.ToolTip = "Leaving from and going to cities are the same. Please specify two different cities.";
+                    Next.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    LeavingFromError.Visibility = Visibility.Collapsed;
+                    GoingToError.Visibility = Visibility.Collapsed;
+                    Next.Visibility = Visibility.Visible;
+                }
             }
         }
 

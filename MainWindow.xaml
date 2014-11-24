@@ -100,7 +100,7 @@
         </EventTrigger>
     </Window.Triggers>
 	<Grid x:Name="MainGrid" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="792">
-		<Grid x:Name="mapGrid" Margin="0,25,0,0" d:IsHidden="True">
+		<Grid x:Name="mapGrid" Margin="0,25,0,0">
 			<Grid.Background>
 				<ImageBrush ImageSource="Images/mapcanada.png"/>
 			</Grid.Background>
@@ -521,6 +521,8 @@
 			<Button x:Name="Next" HorizontalAlignment="Left" Margin="692,574,0,0" VerticalAlignment="Top" Width="75" Click="Next_Click" Height="19.96" Content="Next"/>
 			<Label x:Name="Step1Text" Content="Step 1: Specify trip" HorizontalAlignment="Left" Margin="29,15,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
 			<Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="29,574,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
+			<Image x:Name="LeavingFromError" HorizontalAlignment="Left" Height="10.923" Margin="447.5,43,0,0" VerticalAlignment="Top" Width="10.5" Source="Images/error.png" Visibility="Collapsed"/>
+            <Image x:Name="GoingToError" HorizontalAlignment="Left" Height="10.923" Margin="447.5,89.5,0,0" VerticalAlignment="Top" Width="10.5" Source="Images/error.png" Visibility="Collapsed"/>
 		</Grid>
 		<Grid x:Name="HomeGrid" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="792" Background="White" d:IsHidden="True">
 			<Path x:Name="Logo6" Data="M60.5,356.5 L135,125 223.5,125 148.5,354.5 z" Fill="#FF78DC00" HorizontalAlignment="Left" Height="189" Margin="566,210.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.5,0.5">
@@ -1079,12 +1081,12 @@
 			<TextBlock x:Name="EmailTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Please enter your email for an optional receipt" VerticalAlignment="Top" Foreground="Black" Margin="100.5,275.522,0,0" FontSize="18.667" TextAlignment="Center" Width="563.5"/>
 			<TextBox x:Name="EmailTextBox" HorizontalAlignment="Left" Height="23" Margin="259,326.175,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="281"/>
 		</Grid>
-		<Grid x:Name="TicketGrid" HorizontalAlignment="Left" Height="615" VerticalAlignment="Top" Width="782" Background="White" Margin="0,25,0,0">
+		<Grid x:Name="TicketGrid" HorizontalAlignment="Left" Height="615" VerticalAlignment="Top" Width="782" Background="White" Margin="0,25,0,0" d:IsHidden="True">
 			<Rectangle x:Name="PayTextBG_Copy" Fill="#FFF9B030" Margin="0,46.731,-10,473.269"/>
 			<TextBlock x:Name="PayText_Copy" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Margin="118.603,60.651,108.603,490.502" FontSize="24" Foreground="Black" FontWeight="Bold" Width="554.794"><Run Text="Thank you for using our service"/><LineBreak/><Run Text="Printing ticket..."/></TextBlock>
 			<Button x:Name="PayNext_Copy" Content="Done" HorizontalAlignment="Left" Margin="371,360,0,0" VerticalAlignment="Top" Width="75" Click="TicketDone_Click"/>
 		</Grid>
-		<Grid x:Name="WindowsBar" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="792" d:IsHidden="True">
+		<Grid x:Name="WindowsBar" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="792">
 			<Button x:Name="CloseButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Margin="754,6,0,0" BorderBrush="{x:Null}" Background="{x:Null}" BorderThickness="0" Click="CloseButton_Click">
 				<TextBlock x:Name="CloseText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="X" VerticalAlignment="Top"/>
 			</Button>
