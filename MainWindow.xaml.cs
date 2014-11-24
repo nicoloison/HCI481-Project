@@ -23,15 +23,36 @@ namespace BusApp
         private int count_click = 0, ticketCount;
         private double x_mouse, y_mouse, x_depart, y_depart, x_arrive, y_arrive, totalCost;
         public static string depDate,depTime,depTimeArrival,retDate,repTime,repTimeArrival;
-        public bool optchecked=false, datechecked=false, roundTrip=false; 
-        
+        public bool optchecked=false, datechecked=false, roundTrip=false;
+
+        public string[] cities = {  
+                                     "Winnipeg", 
+                                     "Victoria", 
+                                     "Edmonton", 
+                                     "Whitehorse", 
+                                     "Yellowknife", 
+                                     "Iqaluit", 
+                                     "StJohns",
+                                     "Halifax", 
+                                     "Toronto", 
+                                     "Charlottetown",
+                                     "Regina",
+                                     "Quebec",
+                                     "Ottawa", 
+                                     "Fredericton",
+                                 };
+
         public MainWindow()
         {
             InitializeComponent();
             this.MouseMove += new MouseEventHandler(pictureBox1_MouseUp);
             this.MouseLeftButtonDown += MainWindow_MouseLeftButtonDown;
             this.WindowsBar.MouseDown += WindowsBar_MouseDown;
-
+            // Add cities to combobox selection
+            foreach(string city in cities){
+                DepartingCityTextBox.Items.Add(city);
+                ArrivingCityTextBox.Items.Add(city);
+            }
             ShowHomeGrid();
         }
 
@@ -133,7 +154,7 @@ namespace BusApp
             y_mouse = e.GetPosition(mapGrid).Y;      
         }
 
-        private void DepartingCityTextBox_Update(object sender, RoutedEventArgs e)
+        private void DepartingCityTextBox_Update(object sender, System.EventArgs e)
         {
             String cityName = DepartingCityTextBox.Text;
             object buttonObj = mapGrid.FindName(cityName);
@@ -151,7 +172,7 @@ namespace BusApp
             }
         }
 
-        private void ArrivingCityTextBox_Update(object sender, RoutedEventArgs e)
+        private void ArrivingCityTextBox_Update(object sender, System.EventArgs e)
         {
             String cityName = ArrivingCityTextBox.Text;
             object buttonObj = mapGrid.FindName(cityName);
@@ -179,6 +200,16 @@ namespace BusApp
             {
                 ArrivingCityTextBox_Update(ArrivingCityTextBox, e);
             }
+        }
+
+        private void ArrivingCityTextBox_Closed(object sender, System.EventArgs e)
+        {
+            ArrivingCityTextBox_Update(sender, e);
+        }
+
+        private void DepartingCityTextBox_Closed(object sender, System.EventArgs e)
+        {
+            DepartingCityTextBox_Update(sender, e);
         }
 
         private void DrawWay() 
@@ -878,6 +909,11 @@ namespace BusApp
         private void ResetTicketGrid()
         {
             TicketGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void TicketDone_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	ShowHomeGrid();
         }
 
         #endregion
