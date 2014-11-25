@@ -48,7 +48,8 @@ namespace BusApp
             this.MouseMove += new MouseEventHandler(pictureBox1_MouseUp);
             this.MouseLeftButtonDown += MainWindow_MouseLeftButtonDown;
             this.WindowsBar.MouseDown += WindowsBar_MouseDown;
-            // Add cities to combobox selection
+            // Add cities to combobox selection in alphabetical order
+            Array.Sort(cities);
             foreach(string city in cities){
                 DepartingCityTextBox.Items.Add(city);
                 ArrivingCityTextBox.Items.Add(city);
@@ -160,7 +161,7 @@ namespace BusApp
                 }
                 Next.Visibility = Visibility.Collapsed;
             }
-            else
+            else if (ArrivingCityTextBox.SelectedIndex != -1 && ArrivingCityTextBox.SelectedIndex != -1)
             {
                 LeavingFromError.Visibility = Visibility.Collapsed;
                 GoingToError.Visibility = Visibility.Collapsed;
