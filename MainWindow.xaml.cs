@@ -161,7 +161,7 @@ namespace BusApp
                 }
                 Next.Visibility = Visibility.Collapsed;
             }
-            else if (ArrivingCityTextBox.SelectedIndex != -1 && ArrivingCityTextBox.SelectedIndex != -1)
+            else if ((ArrivingCityTextBox.SelectedIndex != -1 && DepartingCityTextBox.SelectedIndex != -1) || (ArrivingCityTextBox.Text != "" && DepartingCityTextBox.Text != ""))
             {
                 LeavingFromError.Visibility = Visibility.Collapsed;
                 GoingToError.Visibility = Visibility.Collapsed;
@@ -196,7 +196,7 @@ namespace BusApp
                     LeavingFromError.ToolTip = "Leaving from and going to cities are the same. Please specify two different cities.";
                     Next.Visibility = Visibility.Collapsed;
                 }
-                else
+                else if ((ArrivingCityTextBox.SelectedIndex != -1 && DepartingCityTextBox.SelectedIndex != -1) || (ArrivingCityTextBox.Text != "" && DepartingCityTextBox.Text != ""))
                 {
                     LeavingFromError.Visibility = Visibility.Collapsed;
                     GoingToError.Visibility = Visibility.Collapsed;
@@ -222,7 +222,7 @@ namespace BusApp
                     GoingToError.ToolTip = "Leaving from and going to cities are the same. Please specify two different cities.";
                     Next.Visibility = Visibility.Collapsed;
                 }
-                else
+                else if ((ArrivingCityTextBox.SelectedIndex != -1 && DepartingCityTextBox.SelectedIndex != -1) || (ArrivingCityTextBox.Text != "" && DepartingCityTextBox.Text != ""))
                 {
                     LeavingFromError.Visibility = Visibility.Collapsed;
                     GoingToError.Visibility = Visibility.Collapsed;
